@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< Updated upstream
     "com.unity.2d.animation": {
       "version": "7.0.9",
       "depth": 1,
@@ -101,6 +102,25 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.31"
       },
+=======
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.2d.tilemap": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.cinemachine": {
+      "version": "2.6.17",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+>>>>>>> Stashed changes
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
@@ -158,6 +178,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< Updated upstream
     "com.unity.mathematics": {
       "version": "1.2.6",
       "depth": 2,
@@ -172,14 +193,14 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.services.core": {
-      "version": "1.6.0",
+      "version": "1.0.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.nuget.newtonsoft-json": "3.0.2",
-        "com.unity.modules.androidjni": "1.0.0"
+        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
