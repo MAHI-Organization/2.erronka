@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject projectile;
+    public GameObject projectileClone;
+  
     public float runSpeed = 2;
 
     public float jumpSpeed = 3;
@@ -14,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     {
 
         rb2D = GetComponent<Rigidbody2D>();
-        
+        fireProjectile();
     }
 
     // Update is called once per frame
@@ -54,7 +58,22 @@ public class PlayerMove : MonoBehaviour
 
         }
 
+      
+
 
         
+
+    }
+    void fireProjectile()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space)) // 
+        {
+
+            projectileClone = Instantiate(projectile, new Vector3(player.transform.position.x, player.transform.position.y + 0.8f, 0), player.transform.rotation) as GameObject;
+
+        }
+
+
     }
 }
