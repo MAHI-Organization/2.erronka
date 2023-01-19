@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="ER_db_example.erd">
+	<entities>
+		<data-source id="mysql8-184d9214633-31a5b63792269f70">
+			<entity id="1" name="saioa" fq-name="db_example.saioa" order="0" border-width="3" x="423" y="38">
+				<path name="db_example"/>
+			</entity>
+			<entity id="2" name="user" fq-name="db_example.`user`" order="1" x="197" y="30">
+				<path name="db_example"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="FKhk8nmakfjd6cneii5imfux873" fq-name="db_example.saioa.FKhk8nmakfjd6cneii5imfux873" type="fk" pk-ref="2" fk-ref="1"/>
+	</relations>
+</diagram>
