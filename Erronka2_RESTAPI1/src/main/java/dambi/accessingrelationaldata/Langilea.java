@@ -9,27 +9,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 // This tells Hibernate to make a table out of this class
 @Entity
-@Table(name="Langilea")
+@Table(name="langilea")
 public class Langilea {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	
 	private String email;
 
 	private String izena;
-
-	private String user;
+	@Id
+	private String erabiltzailea;
 
 	private Date jaiotzadata;
 
 	private int taldea;
 
-	@OneToMany(mappedBy = "langilea", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Partida> partidak = new ArrayList<>();
+	@OneToMany(targetEntity = Partida.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "erabiltzailea")
+	private List<Partida> partidak ;
 
 	public String getEmail() {
 		return email;
@@ -47,12 +49,12 @@ public class Langilea {
 		this.izena = izena;
 	}
 
-	public String getUser() {
-		return user;
+	public String getErabiltzailea() {
+		return erabiltzailea;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setErabiltzailea(String erabiltzailea) {
+		this.erabiltzailea = erabiltzailea;
 	}
 
 	public Date getJaiotzadata() {
@@ -69,5 +71,12 @@ public class Langilea {
 
 	public void setTaldea(Integer taldea) {
 		this.taldea = taldea;
+	}
+	public List<Partida> getPartidak() {
+		return partidak;
+	}
+
+	public void setPartidak(List<Partida> partidak) {
+		this.partidak = partidak;
 	}
 }
