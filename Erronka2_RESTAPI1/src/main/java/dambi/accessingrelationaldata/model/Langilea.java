@@ -1,4 +1,4 @@
-package dambi.accessingrelationaldata;
+package dambi.accessingrelationaldata.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -6,12 +6,18 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 // This tells Hibernate to make a table out of this class
 @Entity
@@ -29,8 +35,10 @@ public class Langilea {
 
 	private int taldea;
 
-	@OneToMany(targetEntity = Partida.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "erabiltzailea")
+	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+	property = "id")
+	@JsonIdentityReference(alwaysAsId = true)
+	@OneToMany(mappedBy = "langilea", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Partida> partidak ;
 
 	public String getEmail() {

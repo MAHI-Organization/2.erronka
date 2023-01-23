@@ -1,9 +1,11 @@
-package dambi.accessingrelationaldata;
+package dambi.accessingrelationaldata.model;
 
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,13 +15,23 @@ import javax.persistence.Table;
 
 
 
-@Entity
+@Entity(name = "partida")
 @Table(name = "partida")
 public class Partida {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "erabiltzailea", referencedColumnName = "erabiltzailea", foreignKey = @ForeignKey(
+        name = "fk_partida",
+        foreignKeyDefinition = "FOREIGN KEY (erabiltzailea)\r\n" +
+                "REFERENCES public.\"langilea\"(erabiltzailea) MATCH SIMPLE\r\n" +
+                "ON UPDATE CASCADE\r\n" + 
+                "ON DELETE CASCADE",
+                value = ConstraintMode.CONSTRAINT
+    ))
+    private Langilea langilea;
  
  
     @Column(name = "puntuazioa")
@@ -44,6 +56,13 @@ public class Partida {
 
     public void setPuntuazioa(Float puntuazioa) {
         this.puntuazioa = puntuazioa;
+    }
+
+    public Langilea getLangilea() {
+        return langilea;
+    }
+    public void setLangilea(Langilea langilea){
+        this.langilea = langilea;
     }
 
     public Date getData() {
