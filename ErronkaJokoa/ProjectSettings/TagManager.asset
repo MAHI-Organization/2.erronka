@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - Plataforma
-=======
   - Enemigo
->>>>>>> Stashed changes
+  - FallingPlatform
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -16,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Plataforma
+  - 
   - 
   - 
   - 

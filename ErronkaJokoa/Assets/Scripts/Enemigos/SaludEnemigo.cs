@@ -5,8 +5,8 @@ using UnityEngine;
 public class SaludEnemigo : MonoBehaviour
 {
     [Header("Vidas")]
-    public int vidasMax;
-    private int vidas;
+    public float vidasMax;
+    public float vidas;
 
     [Header("Puntos de enemigo")]
     public int puntos;
@@ -24,15 +24,23 @@ public class SaludEnemigo : MonoBehaviour
 
     private void Hil()
     {
-        if(vidas <= 0)
+        if(gameObject.CompareTag("Boss") && vidas / vidasMax <= 0.1)
+        {
+            vidas = vidasMax;
+        }else if(vidas <= 0)
         {
             GameManager.instance.PuntuazioaGehitu(puntos);
             Destroy(gameObject);
         }
     }
 
+
     public void QuitarVida()
     {
         vidas--;
+        if (gameObject.CompareTag("Boss"))
+        {
+            GameManager.instance.PuntuazioaGehitu(puntos);
+        }
     }
 }

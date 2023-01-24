@@ -8,10 +8,14 @@ public class SaludJugador : MonoBehaviour
     [Header("Vidas")]
     private int vidas = 3;
     public Image[] vidasUI;
+
+    [Header("Game Over")]
+    public GameObject menuGameOver;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SaveSystem.BorrarDatos();
+        menuGameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,8 +26,10 @@ public class SaludJugador : MonoBehaviour
 
     private void Hil()
     {
-        if(vidas <= 0)
+        if(vidas <= 0 || transform.position.y < -9)
         {
+            GameManager.instance.PartidaGorde();
+            menuGameOver.SetActive(true);
             gameObject.SetActive(false);
         }
     }
@@ -36,4 +42,6 @@ public class SaludJugador : MonoBehaviour
             vidasUI[vidas].color = Color.black;
         }
     }
+
+   
 }

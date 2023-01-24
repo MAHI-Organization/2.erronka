@@ -31,8 +31,9 @@ public class PlantaEnemiga : MonoBehaviour
 
     private void DispararBala()//Disparatzeko animazioan dago animation event bezala
     {
-        Instantiate(bala, disparoPos.position,disparoPos.rotation).GetComponent<Rigidbody2D>().velocity = -bala.transform.right * balaSpeed;
+        Instantiate(bala, disparoPos.position,disparoPos.rotation).GetComponent<Rigidbody2D>().velocity = -transform.right * balaSpeed;
     }
+
 
     IEnumerator DisparoPlanta()
     {
