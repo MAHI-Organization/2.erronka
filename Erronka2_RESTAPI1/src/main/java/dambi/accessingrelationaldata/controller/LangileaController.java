@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import dambi.accessingrelationaldata.model.Langilea;
-import dambi.accessingrelationaldata.respository.LangileaRepository;
+
 import dambi.accessingrelationaldata.services.LangileaServices;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
@@ -24,11 +24,11 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 				// jarrita, PUT eta DELETEak ez dabiz
 @RequestMapping(path = "/api") // This means URL's start with /demo (after Application path)
 public class LangileaController {
-    
-    @Autowired
-    private LangileaServices langileaServices;
 
-    @PostMapping(path = "/addLangileak") // Map ONLY POST Requests
+	@Autowired
+	private LangileaServices langileaServices;
+
+	@PostMapping(path = "/addLangileak") // Map ONLY POST Requests
 	public @ResponseBody String addNewLangilea(@RequestParam String email,
 			@RequestParam String izena,
 			@RequestParam String erabiltzailea,
@@ -46,18 +46,21 @@ public class LangileaController {
 		langileaServices.saveLangilea(n);
 		return "Saved";
 	}
-    @GetMapping(path = "/allLangileak")
+
+	@GetMapping(path = "/allLangileak")
 	public @ResponseBody Iterable<Langilea> readLangileak() {
 		// This returns a JSON or XML with the users
 		return langileaServices.getAllLangileak();
 	}
-    @PutMapping(path = "/updateLangileak{erabiltzailea}") // Map ONLY POST Requests
-	public @ResponseBody Langilea updateLangilea(@PathVariable String erabiltzailea,@RequestBody Langilea langilea){
+
+	@PutMapping(path = "/updateLangileak{erabiltzailea}") // Map ONLY POST Requests
+	public @ResponseBody Langilea updateLangilea(@PathVariable String erabiltzailea, @RequestBody Langilea langilea) {
 		langilea.setErabiltzailea(erabiltzailea);
-        return langileaServices.saveLangilea(langilea);
-        
-    }
-    @DeleteMapping(path = "/delete/{erabiltzailea}")
+		return langileaServices.saveLangilea(langilea);
+
+	}
+
+	@DeleteMapping(path = "/delete/{erabiltzailea}")
 	public ResponseEntity<Void> deleteUserById(@PathVariable String erabiltzailea) {
 		try {
 			langileaServices.deleteLangilea(erabiltzailea);
@@ -71,4 +74,3 @@ public class LangileaController {
 	}
 
 }
-
