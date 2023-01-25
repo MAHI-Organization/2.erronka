@@ -1,6 +1,6 @@
-package dambi.accessingmongoumeak.model;
+package dambi.accessingmongoumeak.model.Partida;
 
-import java.sql.Date;
+
 import java.util.List;
 
 import org.springframework.stereotype.Repository;

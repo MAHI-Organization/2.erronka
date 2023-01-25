@@ -1,4 +1,4 @@
-package dambi.accessingmongoumeak.model;
+package dambi.accessingmongoumeak.model.Langilea;
 
 import java.util.List;
 

@@ -1,24 +1,20 @@
-package dambi.accessingmongoumeak.model;
+package dambi.accessingmongoumeak.model.Langilea;
 
 import java.sql.Date;
-import java.util.List;
 
-import org.bson.types.ObjectId;
 
 public class Langilea {
-	
-	private String email; 
+
+	private String email;
 	private String izena;
 	private String erabiltzailea;
 	private Date jaiotzadata;
 	private int taldea;
-	
+	private String pasahitza;
 
-	
-	
 	public String getEmail() {
-		return email; 
-		
+		return email;
+
 	}
 
 	public void setEmail(String email) {
@@ -57,12 +53,18 @@ public class Langilea {
 		this.taldea = taldea;
 	}
 
+	public String getPasahitza() {
+		return pasahitza;
+	}
+
+	public void setPasahitza(String pasahitza) {
+		this.pasahitza = pasahitza;
+	}
+
 	@Override
 	public String toString() {
 		return "Langilea [email=" + email + ", izena=" + izena + ", erabiltzailea=" + erabiltzailea + ", jaiotzadata="
-				+ jaiotzadata + ", taldea=" + taldea + "]";
+				+ jaiotzadata + ", taldea=" + taldea + ", pasahitza=" + pasahitza + "]";
 	}
 
-	
-	
 }

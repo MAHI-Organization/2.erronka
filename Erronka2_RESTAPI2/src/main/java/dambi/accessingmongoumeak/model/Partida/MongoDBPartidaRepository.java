@@ -1,4 +1,4 @@
-package dambi.accessingmongoumeak.model;
+package dambi.accessingmongoumeak.model.Partida;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 
 @Repository
-public class MongoDBLangileaRepository implements LangileaRepository {
+public class MongoDBPartidaRepository implements PartidaRepository {
 
     private static final TransactionOptions txnOptions = TransactionOptions.builder()
             .readPreference(ReadPreference.primary())
@@ -28,43 +28,38 @@ public class MongoDBLangileaRepository implements LangileaRepository {
             .build();
     @Autowired
     private MongoClient client;
-    private MongoCollection<Langilea> langileaCollection;
+    private MongoCollection<Partida> partidaCollection;
 
     @PostConstruct
     void init() {
-        langileaCollection = client.getDatabase("Erronka2").getCollection("langilea", Langilea.class);
+        partidaCollection = client.getDatabase("Erronka2").getCollection("partida", Partida.class);
 
     }
 
     @Override
-    public List<Langilea> findAll() {
-        return langileaCollection.find().into(new ArrayList<>());
+    public List<Partida> findAll() {
+        return partidaCollection.find().into(new ArrayList<>());
     }
 
     @Override
-    public Langilea findById(String id) {
-        return langileaCollection.find(eq("_id", new ObjectId(id))).first();
+    public Partida findById(String id) {
+        return partidaCollection.find(eq("_id", new ObjectId(id))).first();
     }
 
     @Override
-    public Langilea save(Langilea langilea) {
-        langilea.setEmail(null);
-        langilea.setIzena(null);
-        langilea.setErabiltzailea(null);
-        langilea.setJaiotzadata(null);
-        langilea.setTaldea(0);
-       
-        langileaCollection.insertOne(langilea);
-        return langilea;
+    public Partida save(Partida partida) {
+        partida.setId(0);
+        partida.setErabiltzailea(null);
+        partida.setPuntuazioa(0);
+        partida.setData(null);
+        partida.setJokoa(null);
+        partidaCollection.insertOne(partida);
+        return partida;
     }
 
     @Override
     public long delete(String erabiltzailea) {
-        return langileaCollection.deleteMany(eq("erabiltzailea", erabiltzailea)).getDeletedCount();
+        return partidaCollection.deleteMany(eq("erabiltzailea", erabiltzailea)).getDeletedCount();
     }
-
-   
-
-   
 
 }

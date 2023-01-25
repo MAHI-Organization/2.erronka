@@ -18,11 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import dambi.accessingmongoumeak.model.Langilea;
-
-import dambi.accessingmongoumeak.model.LangileaRepository;
-import dambi.accessingmongoumeak.model.Partida;
-import dambi.accessingmongoumeak.model.PartidaRepository;
+import dambi.accessingmongoumeak.model.Langilea.Langilea;
+import dambi.accessingmongoumeak.model.Langilea.LangileaRepository;
+import dambi.accessingmongoumeak.model.Partida.Partida;
+import dambi.accessingmongoumeak.model.Partida.PartidaRepository;
 
 @RestController // This means that this class is a Controller baina @Controller bakarrik
 				// jarrita, PUT eta DELETEak ez dabiz
@@ -61,14 +60,14 @@ public class MainController {
 
 	@PostMapping(path = "/partidaBerria") // Map ONLY POST Requests
 	public @ResponseBody String addNewPartida(@RequestParam int id, @RequestParam String erabiltzailea,
-			String puntuazioa, Date data) {
+			int puntuazioa, Date data) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
 		Partida u = new Partida();
 		u.setId(id);
 		u.setErabiltzailea(erabiltzailea);
-		u.setPuntuazioa(id);
+		u.setPuntuazioa(puntuazioa);
 		u.setData(data);
 		partidaRepository.save(u);
 		return "Saved";

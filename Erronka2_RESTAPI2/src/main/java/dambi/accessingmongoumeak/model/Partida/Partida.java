@@ -1,24 +1,19 @@
-package dambi.accessingmongoumeak.model;
+package dambi.accessingmongoumeak.model.Partida;
 
 import java.sql.Date;
-import java.util.List;
 
-import org.bson.types.ObjectId;
 
 public class Partida {
-	
-	private int _id; 
+
+	private int _id;
 	private String erabiltzailea;
 	private float puntuazioa;
 	private Date data;
-	
-	
+	private String jokoa;
 
-	
-	
 	public int getId() {
-		return _id; 
-		
+		return _id;
+
 	}
 
 	public void setId(int id) {
@@ -41,7 +36,6 @@ public class Partida {
 		this.puntuazioa = puntuazioa;
 	}
 
-
 	public Date getData() {
 		return data;
 	}
@@ -50,15 +44,18 @@ public class Partida {
 		this.data = data;
 	}
 
+	public String getJokoa() {
+		return jokoa;
+	}
+
+	public void setJokoa(String jokoa) {
+		this.jokoa = jokoa;
+	}
+
 	@Override
 	public String toString() {
 		return "Partida [_id=" + _id + ", erabiltzailea=" + erabiltzailea + ", puntuazioa=" + puntuazioa + ", data="
-				+ data + "]";
+				+ data + ", jokoa=" + jokoa + "]";
 	}
 
-
-
-
-	
-	
 }
