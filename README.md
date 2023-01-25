@@ -31,6 +31,9 @@
     - 2.galdera
     - 3.galdera
     - 4.galdera
+  - **Jokoa**
+    - id
+    - izena
 
 ## Bigarren RestApia
 
