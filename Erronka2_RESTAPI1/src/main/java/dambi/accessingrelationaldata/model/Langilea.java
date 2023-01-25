@@ -1,30 +1,28 @@
 package dambi.accessingrelationaldata.model;
 
 import java.sql.Date;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 // This tells Hibernate to make a table out of this class
 @Entity
-@Table(name="langilea")
+@Table(name = "langilea")
 public class Langilea {
-	
-	
+
 	private String email;
 
 	private String izena;
@@ -35,11 +33,10 @@ public class Langilea {
 
 	private int taldea;
 
-	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-	property = "id")
+	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	@JsonIdentityReference(alwaysAsId = true)
 	@OneToMany(mappedBy = "langilea", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Partida> partidak ;
+	private List<Partida> partidak;
 
 	public String getEmail() {
 		return email;
@@ -80,6 +77,7 @@ public class Langilea {
 	public void setTaldea(Integer taldea) {
 		this.taldea = taldea;
 	}
+
 	public List<Partida> getPartidak() {
 		return partidak;
 	}
