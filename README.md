@@ -38,7 +38,7 @@
 - partidak/partidaGuztiak
   - Mota: GET
 - partidak/partidaOnenak
-  - Mota:GET
+  - Mota: GET
   - Azalpena: Langile bakoitzaren partidarik onena joku bakoitzean
 - partidak/partidaRankingByJokua{jokua}
   - Mota: GET
