@@ -54,8 +54,11 @@ public class LangileaController {
 	}
 
 	@PutMapping(path = "/updateLangileak{erabiltzailea}") // Map ONLY POST Requests
-	public @ResponseBody Langilea updateLangilea(@PathVariable String erabiltzailea, @RequestBody Langilea langilea) {
+	public @ResponseBody Langilea updateLangilea(@PathVariable String erabiltzailea,  
+	Langilea langilea) {
+
 		langilea.setErabiltzailea(erabiltzailea);
+
 		return langileaServices.saveLangilea(langilea);
 
 	}
