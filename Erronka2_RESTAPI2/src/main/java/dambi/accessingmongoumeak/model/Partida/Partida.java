@@ -2,14 +2,17 @@ package dambi.accessingmongoumeak.model.Partida;
 
 import java.sql.Date;
 
+import dambi.accessingmongoumeak.model.Jokoa;
+import dambi.accessingmongoumeak.model.Langilea.Langilea;
+
 
 public class Partida {
 
 	private int _id;
-	private String erabiltzailea;
+	private Langilea erabiltzailea;
 	private float puntuazioa;
 	private Date data;
-	private String jokoa;
+	private Jokoa jokoa;
 
 	public int getId() {
 		return _id;
@@ -20,11 +23,11 @@ public class Partida {
 		this._id = id;
 	}
 
-	public String getErabiltzailea() {
+	public Langilea getErabiltzailea() {
 		return erabiltzailea;
 	}
 
-	public void setErabiltzailea(String erabiltzailea) {
+	public void setErabiltzailea(Langilea erabiltzailea) {
 		this.erabiltzailea = erabiltzailea;
 	}
 
@@ -44,11 +47,11 @@ public class Partida {
 		this.data = data;
 	}
 
-	public String getJokoa() {
+	public Jokoa getJokoa() {
 		return jokoa;
 	}
 
-	public void setJokoa(String jokoa) {
+	public void setJokoa(Jokoa jokoa) {
 		this.jokoa = jokoa;
 	}
 

@@ -62,4 +62,12 @@ public class MongoDBPartidaRepository implements PartidaRepository {
         return partidaCollection.deleteMany(eq("erabiltzailea", erabiltzailea)).getDeletedCount();
     }
 
+    @Override
+    public Partida partidaBerria(Partida partida) {
+        int id = partidaCollection.find().into(new ArrayList<>()).size();
+        partida.setId(id + 1);
+        partidaCollection.insertOne(partida);
+        return partida;
+    }
+
 }

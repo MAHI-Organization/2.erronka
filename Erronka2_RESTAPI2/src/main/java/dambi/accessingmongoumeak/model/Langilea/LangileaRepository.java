@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LangileaRepository {
     List<Langilea> findAll();
-    Langilea findById(String erabiltzailea);
-    Langilea save(Langilea langilea);
-    long delete(String izena);
+    Langilea langileaByUser(String erabiltzailea);
+    Langilea langileBerria(Langilea langilea);
+    Langilea langileaGorde(Langilea langilea);
+    String deleteById(String erabiltzailea);
 }

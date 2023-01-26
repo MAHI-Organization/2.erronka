@@ -42,25 +42,36 @@ public class MongoDBLangileaRepository implements LangileaRepository {
     }
 
     @Override
-    public Langilea findById(String id) {
-        return langileaCollection.find(eq("_id", new ObjectId(id))).first();
-    }
+    public Langilea langileBerria(Langilea langilea) {
 
-    @Override
-    public Langilea save(Langilea langilea) {
-        langilea.setEmail(null);
-        langilea.setIzena(null);
-        langilea.setErabiltzailea(null);
-        langilea.setJaiotzadata(null);
-        langilea.setTaldea(0);
-        langilea.setPasahitza(null);
         langileaCollection.insertOne(langilea);
         return langilea;
     }
 
     @Override
-    public long delete(String erabiltzailea) {
-        return langileaCollection.deleteMany(eq("erabiltzailea", erabiltzailea)).getDeletedCount();
+    public Langilea langileaByUser(String erabiltzailea) {
+        return langileaCollection.find(eq("erabiltzailea", erabiltzailea)).first();
+        
     }
+
+    @Override
+    public Langilea langileaGorde(Langilea langilea) {
+
+        langileaCollection.insertOne(langilea);
+        return langilea;
+    }
+
+    @Override
+    public String deleteById(String erabiltzailea) {
+        if (langileaCollection.find(eq("erabiltzailea", erabiltzailea)).first() != null) {
+            langileaCollection.deleteMany(eq("erabiltzailea", erabiltzailea));
+            return erabiltzailea + " daukan pelikula datu-basetik ezabatua izan da";
+        } else {
+            return "Ez dago " + erabiltzailea + " ID-a daukan pelikularik";
+        }
+    }
+
+    
+    
 
 }

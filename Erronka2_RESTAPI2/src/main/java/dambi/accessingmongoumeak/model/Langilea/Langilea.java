@@ -8,9 +8,23 @@ public class Langilea {
 	private String email;
 	private String izena;
 	private String erabiltzailea;
-	private Date jaiotzadata;
+	private String jaiotzadata;
 	private int taldea;
 	private String pasahitza;
+
+	public Langilea() {
+
+        
+        this.izena = "";
+
+    }
+    public Langilea(String izena){
+        
+        this.izena = izena;
+    }
+
+
+
 
 	public String getEmail() {
 		return email;
@@ -37,11 +51,11 @@ public class Langilea {
 		this.erabiltzailea = erabiltzailea;
 	}
 
-	public Date getJaiotzadata() {
+	public String getJaiotzadata() {
 		return jaiotzadata;
 	}
 
-	public void setJaiotzadata(Date jaiotzadata) {
+	public void setJaiotzadata(String jaiotzadata) {
 		this.jaiotzadata = jaiotzadata;
 	}
 

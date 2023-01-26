@@ -11,4 +11,6 @@ public interface PartidaRepository {
     Partida findById(String id);
     Partida save(Partida partida);
     long delete(String erabiltzailea);
+
+    Partida partidaBerria(Partida partida);
 }
