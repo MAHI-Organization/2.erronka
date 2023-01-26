@@ -51,9 +51,6 @@
 - **langileak/langileErabiltzailea{erabiltzailea}**
   - **Mota: GET**
   - **Azalapena:** Langileen erabiltzailea lortzeko
-- **langileak/langilePasahitza{Izena}** 
-   - **Mota:** GET
-   - **Azalpena:** Langileen pasahitza lortzeko
 
 - **balorazioak/jokuBakoitzarenBalorazioak**
   - **Mota:** GET
