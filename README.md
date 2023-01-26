@@ -48,9 +48,9 @@
   - **Mota:** GET
   - **Azalpena:** Joku bakoitzean puntuazio altuena daukaten partiden rankingnak (max --> min)
 
-- **langileak/langileIzena{Izena}**
+- **langileak/langileErabiltzailea{erabiltzailea}**
   - **Mota: GET**
-  - **Azalapena:** Langileen izena lortzeko
+  - **Azalapena:** Langileen erabiltzailea lortzeko
 - **langileak/langilePasahitza{Izena}** 
    - **Mota:** GET
    - **Azalpena:** Langileen pasahitza lortzeko
