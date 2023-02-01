@@ -33,8 +33,7 @@ public class Langilea {
 
 	private int taldea;
 
-	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	@JsonIdentityReference(alwaysAsId = true)
+	
 	@OneToMany(mappedBy = "langilea", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Partida> partidak;
 

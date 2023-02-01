@@ -13,6 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 
 @Entity(name = "partida")
@@ -22,6 +26,8 @@ public class Partida {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "erabiltzailea")
+	@JsonIdentityReference(alwaysAsId = true)
     @ManyToOne
     @JoinColumn(name = "erabiltzailea", referencedColumnName = "erabiltzailea", foreignKey = @ForeignKey(
         name = "fk_partida",
@@ -40,7 +46,7 @@ public class Partida {
     @Column(name = "data")
     private Date data;
 
-    
+   
 
     public int getId() {
         return id;
