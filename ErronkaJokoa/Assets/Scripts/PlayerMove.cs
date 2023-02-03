@@ -92,4 +92,5 @@ public class PlayerMove : MonoBehaviour
             Instantiate(projectil, puntoDeDisparo.position, transform.rotation);
         }
     }
+
 }

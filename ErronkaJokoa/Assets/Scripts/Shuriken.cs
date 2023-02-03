@@ -43,5 +43,10 @@ public class Shuriken : MonoBehaviour
             other.GetComponent<SaludEnemigo>().QuitarVida();
             Destroy(gameObject);
         }
+        if (other.CompareTag("Boss"))
+        {
+            other.GetComponent<SaludEnemigo>().QuitarVida();
+            Destroy(gameObject);
+        }
     }
 }
