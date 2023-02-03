@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#searchForm {
+    padding-top: 10%;
+}
+
+.images {
+    width: 120px;
+    height: 70px;
+}
+
+.carousel-inner {
+    height: 400px;
+}
+
+.bg-menua {
+    background-color: #dddada !important;
+}
+
+.erlatiboa {
+    position: relative;
+}
+
+.full-width.dropdown {
+    position: static;
+}
+
+    .full-width.dropdown > .dropdown-menu {
+        left: 0;
+    }
+
+        .full-width.dropdown > .dropdown-menu > li > a {
+            white-space: normal;
+        }
+
+.jokoak .container2 {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    height: 800px;
+    justify-content: center;
+}
+
+.container2 {
+    height: 300px;
+}
+
+.juego1 {
+    border: 1px solid black;
+    margin: 20px 20px 20px 20px;
+}
+
+.juego2 {
+    border: 1px solid black;
+    margin: 20px 20px 20px 20px;
+}
+
+.juego3 {
+    border: 1px solid black;
+    margin: 20px 20px 20px 20px;
+}
+
+.juego4 {
+    border: 1px solid black;
+    margin: 20px 20px 20px 20px;
+}
