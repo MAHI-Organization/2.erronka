@@ -16,11 +16,13 @@ public class Langilea {
 
         
         this.izena = "";
+	
 
     }
     public Langilea(String izena){
         
         this.izena = izena;
+		
     }
 
 
