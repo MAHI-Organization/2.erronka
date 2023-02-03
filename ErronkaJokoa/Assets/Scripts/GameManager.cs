@@ -1,3 +1,4 @@
+using Npgsql;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        DatuBaseanGorde();
     }
 
     // Update is called once per frame
@@ -29,17 +32,78 @@ public class GameManager : MonoBehaviour
         DatosPartida jokatutakoPartida;
         if (partidak != null)
         {
-            jokatutakoPartida = new DatosPartida(partidak.Count, puntuazioa, DateTime.Now, "aitzol");
+            jokatutakoPartida = new DatosPartida(partidak.Count, puntuazioa, DateTime.Now, PlayerPrefs.GetString("Erabiltzailea"));
         }
         else
         {
             partidak= new List<DatosPartida>();
-            jokatutakoPartida = new DatosPartida(1, puntuazioa, DateTime.Now, "aitzol");
+            jokatutakoPartida = new DatosPartida(1, puntuazioa, DateTime.Now, PlayerPrefs.GetString("Erabiltzailea"));
         }
         Debug.Log(jokatutakoPartida.ToString());
         Debug.Log("Partidas totales: " + partidak.Count);
         partidak.Add(jokatutakoPartida);
         SaveSystem.GuardarDatos(partidak);
+    }
+
+    public void DatuBaseanGorde()
+    {
+        try
+        {
+            NpgsqlConnection conn = new NpgsqlConnection("Host=192.168.65.95;Port=5432;Username=postgres;Password=mahi;Database=erronka2");
+            conn.Open();
+            List<DatosPartida> gordetakoPartidak = SaveSystem.CargarDatos();
+
+
+            for(int i = 0; i < gordetakoPartidak.Count; i++) {
+                if (ErabiltzaileaExistitzenDa(gordetakoPartidak[i].erabiltzailea))
+                {
+                    NpgsqlCommand command = new NpgsqlCommand("INSERT INTO public.partida(id, data, puntuazioa, erabiltzailea)VALUES((select coalesce(max(id) + 1, 1)from partida), '2023-02-02', "+gordetakoPartidak[i].puntuazioa+",'"+gordetakoPartidak[i].erabiltzailea+"'); ", conn);
+
+                    command.ExecuteNonQuery();
+                    Debug.Log("Datuak gorde dira");
+                }
+                else
+                {
+                    Debug.Log("Ez da erabiltzailea aurkitu");
+                }
+            }         
+            conn.Close();
+            SaveSystem.BorrarDatos();
+        }
+        catch (NpgsqlException e)
+        {
+            //Debug.LogException(e);
+            Debug.Log("Ezin izan dira datuak gorde");
+        }
+    }
+
+
+    /*Sartutako erabiltzailea existitzen dela konprobatzeko metodoa*/
+    private bool ErabiltzaileaExistitzenDa(string erabiltzailea)
+    {
+        try
+        {
+            NpgsqlConnection conn = new NpgsqlConnection("Host=192.168.65.95;Port=5432;Username=postgres;Password=mahi;Database=erronka2");
+            conn.Open();
+
+            NpgsqlCommand command = new NpgsqlCommand("select erabiltzailea from langilea l", conn);
+
+            NpgsqlDataReader dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                if (dr[0].Equals(erabiltzailea))
+                {
+                    return true;
+                }
+            }
+            conn.Close();
+        }
+        catch (NpgsqlException e)
+        {
+            Debug.LogException(e);
+        }
+        return false;
     }
 
     public void PuntuazioaGehitu(int puntos)
