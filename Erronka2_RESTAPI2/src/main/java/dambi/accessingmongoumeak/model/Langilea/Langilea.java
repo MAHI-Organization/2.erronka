@@ -1,6 +1,9 @@
 package dambi.accessingmongoumeak.model.Langilea;
 
 import java.sql.Date;
+import java.util.List;
+
+import dambi.accessingmongoumeak.model.Partida.Partida;
 
 
 public class Langilea {
@@ -10,23 +13,17 @@ public class Langilea {
 	private String erabiltzailea;
 	private String jaiotzadata;
 	private int taldea;
+	private List<Partida> partidak;
 	private String pasahitza;
 
-	public Langilea() {
-
-        
+	public Langilea() {        
         this.izena = "";
-	
 
     }
-    public Langilea(String izena){
-        
+    public Langilea(String izena){  
         this.izena = izena;
 		
     }
-
-
-
 
 	public String getEmail() {
 		return email;
@@ -81,6 +78,13 @@ public class Langilea {
 	public String toString() {
 		return "Langilea [email=" + email + ", izena=" + izena + ", erabiltzailea=" + erabiltzailea + ", jaiotzadata="
 				+ jaiotzadata + ", taldea=" + taldea + ", pasahitza=" + pasahitza + "]";
+	}
+
+	public List<Partida> getPartidak() {
+		return partidak;
+	}
+	public void setPartidak(List<Partida> partidak) {
+		this.partidak = partidak;
 	}
 
 }

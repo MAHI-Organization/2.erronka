@@ -1,10 +1,23 @@
 package dambi.accessingmongoumeak.model.Balorazioa;
 
-public class Balorazioa {
+import dambi.accessingmongoumeak.model.Jokoa;
 
+public class Balorazioa {
     private String erabiltzailea;
-    private String jokoa;
+    private Jokoa jokoa;
     private float balorazioa;
+
+    public Balorazioa(){
+        this.erabiltzailea = "";
+        this.jokoa = null;
+        this.balorazioa = 0;
+    }
+
+    public Balorazioa(String erabiltzailea,Jokoa jokoa,float balorazioa){
+        this.erabiltzailea = erabiltzailea;
+        this.jokoa = jokoa;
+        this.balorazioa = balorazioa;
+    }
 
     public String getErabiltzailea() {
         return erabiltzailea;
@@ -14,11 +27,11 @@ public class Balorazioa {
         this.erabiltzailea = erabiltzailea;
     }
 
-    public String getJokoa() {
+    public Jokoa getJokoa() {
         return jokoa;
     }
 
-    public void setJokoa(String jokoa) {
+    public void setJokoa(Jokoa jokoa) {
         this.jokoa = jokoa;
     }
 

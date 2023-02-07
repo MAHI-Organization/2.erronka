@@ -28,38 +28,43 @@ public class MongoDBKomentarioaRepository implements KomentarioaRepository {
             .build();
     @Autowired
     private MongoClient client;
-    private MongoCollection<Komentarioa> langileaCollection;
+    private MongoCollection<Komentarioa> komentarioaCollection;
 
     @PostConstruct
     void init() {
-        langileaCollection = client.getDatabase("Erronka2").getCollection("komentarioa", Komentarioa.class);
+        komentarioaCollection = client.getDatabase("erronka2").getCollection("komentarioak", Komentarioa.class);
 
     }
 
     @Override
     public List<Komentarioa> findAll() {
-        return langileaCollection.find().into(new ArrayList<>());
+        return komentarioaCollection.find().into(new ArrayList<>());
     }
 
     @Override
-    public Komentarioa findById(String erabiltzailea) {
-        return langileaCollection.find(eq("erabiltzailea", new ObjectId(erabiltzailea))).first();
+    public List<Komentarioa> findByJokoa(String jokoa) {
+        return komentarioaCollection.find(eq("jokoa.izena", jokoa)).into(new ArrayList<>());
     }
 
     @Override
     public Komentarioa save(Komentarioa komentarioa) {
-
-        komentarioa.setErabiltzailea(null);
-        komentarioa.setJokoa(null);
-        komentarioa.setKomentarioa(null);
-
-        langileaCollection.insertOne(komentarioa);
+        komentarioaCollection.insertOne(komentarioa);
         return komentarioa;
     }
 
     @Override
-    public long delete(Komentarioa komentarioa) {
-        return langileaCollection.deleteMany(eq("komentarioa", komentarioa)).getDeletedCount();
+    public String deleteById(int id) {
+        if(komentarioaCollection.find(eq("_id", id)).first() != null){
+            komentarioaCollection.deleteMany(eq("_id", id));
+            return id + " daukan komentarioa ezabatu da";
+        }else{
+            return "Ez dago " + id + " ID-a daukan komentariorik";
+        }
+    }
+
+    @Override
+    public List<Komentarioa> findByErabiltzailea(String erabiltzailea) {
+        return komentarioaCollection.find(eq("erabiltzailea", erabiltzailea)).into(new ArrayList<>());
     }
 
 }

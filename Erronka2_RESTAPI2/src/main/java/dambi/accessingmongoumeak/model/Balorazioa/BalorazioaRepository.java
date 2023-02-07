@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BalorazioaRepository {
-    List<Balorazioa> findAll();
-    Balorazioa findById(String erabiltzailea);
+    Balorazioa findByErabiltzaileaJokoa(String izena,String jokoa);
+    void deleteByErabiltzaileaJokoa(String izena,String jokoa);
     Balorazioa save(Balorazioa balorazioa);
-    long delete(String balorazioa);
+    float batazBestekoBalorazioa(String jokoarenIzena);
 }
 
 

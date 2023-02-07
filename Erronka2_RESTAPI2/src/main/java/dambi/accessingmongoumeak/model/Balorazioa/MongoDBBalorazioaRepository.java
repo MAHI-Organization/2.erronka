@@ -4,17 +4,24 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.ReadConcern;
 import com.mongodb.ReadPreference;
 import com.mongodb.TransactionOptions;
 import com.mongodb.WriteConcern;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -28,38 +35,59 @@ public class MongoDBBalorazioaRepository implements BalorazioaRepository {
             .build();
     @Autowired
     private MongoClient client;
-    private MongoCollection<Balorazioa> langileaCollection;
+    private MongoCollection<Balorazioa> balorazioaCollection;
 
     @PostConstruct
     void init() {
-        langileaCollection = client.getDatabase("Erronka2").getCollection("balorazioa", Balorazioa.class);
+        balorazioaCollection = client.getDatabase("erronka2").getCollection("balorazioak", Balorazioa.class);
 
-    }
-
-    @Override
-    public List<Balorazioa> findAll() {
-        return langileaCollection.find().into(new ArrayList<>());
-    }
-
-    @Override
-    public Balorazioa findById(String erabiltzailea) {
-        return langileaCollection.find(eq("erabiltzailea", new ObjectId(erabiltzailea))).first();
     }
 
     @Override
     public Balorazioa save(Balorazioa balorazioa) {
-
-        balorazioa.setErabiltzailea(null);
-        balorazioa.setJokoa(null);
-        balorazioa.setBalorazioa(0);
-
-        langileaCollection.insertOne(balorazioa);
+        balorazioaCollection.insertOne(balorazioa);
         return balorazioa;
     }
 
     @Override
-    public long delete(String erabiltzailea) {
-        return langileaCollection.deleteMany(eq("erabiltzailea", erabiltzailea)).getDeletedCount();
+    public float batazBestekoBalorazioa(String jokoarenIzena) {
+        List<Balorazioa>balorazioak = balorazioaCollection.find().into(new ArrayList<>());
+        float balorazioKantitatea = 0;
+        float balorazioaGuztira = 0;
+        float batazBestekoBalorazioa = 0;
+        for(int i = 0;i < balorazioak.size();i++){
+            if(balorazioak.get(i).getJokoa().getIzena().equals(jokoarenIzena)){
+                balorazioaGuztira += balorazioak.get(i).getBalorazioa();
+                balorazioKantitatea++;
+            }
+        }
+        batazBestekoBalorazioa = balorazioaGuztira / balorazioKantitatea;
+        return batazBestekoBalorazioa;
     }
 
-}
+
+
+    @Override
+    public Balorazioa findByErabiltzaileaJokoa(String izena,String jokoa) {
+        // TODO Auto-generated method stub
+        BasicDBObject query = new BasicDBObject();
+        List<BasicDBObject> andList = new ArrayList<BasicDBObject>();
+        andList.add(new BasicDBObject("erabiltzailea", izena));
+        andList.add(new BasicDBObject("jokoa.izena", jokoa));
+        query.put("$and", andList);
+        return balorazioaCollection.find(query).first();
+    }
+
+    @Override
+    public void deleteByErabiltzaileaJokoa(String izena, String jokoa) {
+        // TODO Auto-generated method stub
+        Balorazioa balorazioa = findByErabiltzaileaJokoa(izena, jokoa);
+        if(balorazioa != null){
+            BasicDBObject query = new BasicDBObject();
+            List<BasicDBObject> andList = new ArrayList<BasicDBObject>();
+            andList.add(new BasicDBObject("erabiltzailea", izena));
+            andList.add(new BasicDBObject("jokoa.izena", jokoa));
+            query.put("$and", andList);
+            balorazioaCollection.deleteMany(query);
+        }
+    }}

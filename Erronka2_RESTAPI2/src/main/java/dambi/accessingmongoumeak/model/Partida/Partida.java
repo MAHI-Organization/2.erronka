@@ -1,10 +1,6 @@
 package dambi.accessingmongoumeak.model.Partida;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import org.bson.codecs.jsr310.LocalDateCodec;
 
 import dambi.accessingmongoumeak.model.Jokoa;
 import dambi.accessingmongoumeak.model.Langilea.Langilea;

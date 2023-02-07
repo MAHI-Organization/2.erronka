@@ -41,7 +41,7 @@ public class Partida {
  
  
     @Column(name = "puntuazioa")
-    private Float puntuazioa;
+    private float puntuazioa;
 
     @Column(name = "data")
     private Date data;
@@ -60,7 +60,7 @@ public class Partida {
         return puntuazioa;
     }
 
-    public void setPuntuazioa(Float puntuazioa) {
+    public void setPuntuazioa(float puntuazioa) {
         this.puntuazioa = puntuazioa;
     }
 

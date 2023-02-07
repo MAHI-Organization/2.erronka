@@ -9,6 +9,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.ReadConcern;
 import com.mongodb.ReadPreference;
 import com.mongodb.TransactionOptions;
@@ -28,40 +29,53 @@ public class MongoDBInkestaRepository implements InkestaRepository {
             .build();
     @Autowired
     private MongoClient client;
-    private MongoCollection<Inkesta> langileaCollection;
+    private MongoCollection<Inkesta> inkestaCollection;
 
     @PostConstruct
     void init() {
-        langileaCollection = client.getDatabase("Erronka2").getCollection("inkesta", Inkesta.class);
+        inkestaCollection = client.getDatabase("erronka2").getCollection("inkestak", Inkesta.class);
 
     }
 
     @Override
     public List<Inkesta> findAll() {
-        return langileaCollection.find().into(new ArrayList<>());
+        return inkestaCollection.find().into(new ArrayList<>());
     }
 
     @Override
     public Inkesta findById(String erabiltzailea) {
-        return langileaCollection.find(eq("erabiltzailea", new ObjectId(erabiltzailea))).first();
+        return inkestaCollection.find(eq("erabiltzailea", new ObjectId(erabiltzailea))).first();
     }
 
     @Override
     public Inkesta save(Inkesta inkesta) {
-
-      inkesta.setErabiltzailea(null);
-      inkesta.setLehenengoGaldera(null);
-      inkesta.setBigarrenGaldera(null);
-      inkesta.setHirugarrenGaldera(null);
-      inkesta.setLaugarrenGaldera(null);
-
-        langileaCollection.insertOne(inkesta);
+        inkestaCollection.insertOne(inkesta);
         return inkesta;
     }
 
     @Override
-    public long delete(String lehenengogaldera) {
-        return langileaCollection.deleteMany(eq("komentarioa", lehenengogaldera)).getDeletedCount();
+    public String delete(String erabiltzailea,String jokoarenIzena) {
+        if(findByErabiltzaileaJokoa(erabiltzailea, jokoarenIzena) != null){
+            BasicDBObject query = new BasicDBObject();
+            List<BasicDBObject> andList = new ArrayList<BasicDBObject>();
+            andList.add(new BasicDBObject("erabiltzailea", erabiltzailea));
+            andList.add(new BasicDBObject("jokoa.izena", jokoarenIzena));
+            query.put("$and", andList);
+            inkestaCollection.deleteMany(query);
+            return "Inkesta ezabatu da";
+        }else{
+            return "Ez da inkesta aurkitu";
+        }
+    }
+
+    @Override
+    public Inkesta findByErabiltzaileaJokoa(String erabiltzailea, String jokoarenIzena) {
+        BasicDBObject query = new BasicDBObject();
+        List<BasicDBObject> andList = new ArrayList<BasicDBObject>();
+        andList.add(new BasicDBObject("erabiltzailea", erabiltzailea));
+        andList.add(new BasicDBObject("jokoa.izena", jokoarenIzena));
+        query.put("$and", andList);
+        return inkestaCollection.find(query).first();
     }
 
     

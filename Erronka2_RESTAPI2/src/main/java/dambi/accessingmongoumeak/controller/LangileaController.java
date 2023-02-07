@@ -35,7 +35,6 @@ public class LangileaController {
 
     @GetMapping(path = "/langileGuztiak")
 	public @ResponseBody Iterable<Langilea> getLangileGuztiak() {
-		
 		return langileaRepository.findAll();
 	}
   

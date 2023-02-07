@@ -32,7 +32,7 @@ public class MongoDBLangileaRepository implements LangileaRepository {
 
     @PostConstruct
     void init() {
-        langileaCollection = client.getDatabase("Erronka2").getCollection("langilea", Langilea.class);
+        langileaCollection = client.getDatabase("erronka2").getCollection("langileak", Langilea.class);
 
     }
 
@@ -43,7 +43,6 @@ public class MongoDBLangileaRepository implements LangileaRepository {
 
     @Override
     public Langilea langileBerria(Langilea langilea) {
-
         langileaCollection.insertOne(langilea);
         return langilea;
     }

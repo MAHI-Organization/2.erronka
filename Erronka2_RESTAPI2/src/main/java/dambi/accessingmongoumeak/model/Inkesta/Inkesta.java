@@ -1,12 +1,26 @@
 package dambi.accessingmongoumeak.model.Inkesta;
 
+import java.util.List;
+
+import dambi.accessingmongoumeak.model.Jokoa;
+
 public class Inkesta {
 
     private String erabiltzailea;
-    private String lehenengoGaldera;
-    private String bigarrenGaldera;
-    private String hirugarrenGaldera;
-    private String laugarrenGaldera;
+    private Jokoa jokoa;
+    private List<String> galderak;
+
+    public Inkesta(){
+        this.erabiltzailea = "";
+        this.jokoa = null;
+        this.galderak = null;
+    }
+
+    public Inkesta(String erabiltzailea,Jokoa jokoa,List<String> galderenErantzunak){
+        this.erabiltzailea = erabiltzailea;
+        this.jokoa = jokoa;
+        this.galderak = galderenErantzunak;
+    }
 
     public String getErabiltzailea() {
         return erabiltzailea;
@@ -16,43 +30,27 @@ public class Inkesta {
         this.erabiltzailea = erabiltzailea;
     }
 
-    public String getLehenengoGaldera() {
-        return lehenengoGaldera;
+    public Jokoa getJokoa() {
+        return jokoa;
     }
 
-    public void setLehenengoGaldera(String lehenengoGaldera) {
-        this.lehenengoGaldera = lehenengoGaldera;
+    public void setJokoa(Jokoa jokoa) {
+        this.jokoa = jokoa;
     }
 
-    public String getBigarrenGaldera() {
-        return bigarrenGaldera;
+    public List<String> getGalderak() {
+        return galderak;
     }
 
-    public void setBigarrenGaldera(String bigarrenGaldera) {
-        this.bigarrenGaldera = bigarrenGaldera;
-    }
-
-    public String getHirugarrenGaldera() {
-        return hirugarrenGaldera;
-    }
-
-    public void setHirugarrenGaldera(String hirugarrenGaldera) {
-        this.hirugarrenGaldera = hirugarrenGaldera;
-    }
-
-    public String getLaugarrenGaldera() {
-        return laugarrenGaldera;
-    }
-
-    public void setLaugarrenGaldera(String laugarrenGaldera) {
-        this.laugarrenGaldera = laugarrenGaldera;
+    public void setGalderak(List<String> galderak) {
+        this.galderak = galderak;
     }
 
     @Override
     public String toString() {
-        return "Inkesta [erabiltzailea=" + erabiltzailea + ", lehenengoGaldera=" + lehenengoGaldera
-                + ", bigarrenGaldera=" + bigarrenGaldera + ", hirugarrenGaldera=" + hirugarrenGaldera
-                + ", laugarrenGaldera=" + laugarrenGaldera + "]";
+        return "Inkesta [erabiltzailea=" + erabiltzailea + ", jokoa=" + jokoa + ", galderak=" + galderak + "]";
     }
+
+    
 
 }

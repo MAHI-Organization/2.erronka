@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KomentarioaRepository {
     List<Komentarioa> findAll();
-    Komentarioa findById(String jokua);
+    List<Komentarioa> findByJokoa(String jokua);
+    List<Komentarioa> findByErabiltzailea(String erabiltzailea);
     Komentarioa save(Komentarioa komentarioa);
-    long delete(Komentarioa komentarioa);
+    String deleteById(int id);
 }

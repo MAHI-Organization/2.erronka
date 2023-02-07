@@ -9,7 +9,8 @@ public interface InkestaRepository {
     List<Inkesta> findAll();
     Inkesta findById(String erabiltzailea);
     Inkesta save(Inkesta inkesta);
-    long delete(String lehenengogaldera);
+    Inkesta findByErabiltzaileaJokoa(String erabiltzailea,String jokoarenIzena);
+    String delete(String erabiltzailea,String jokoarenIzena);
 }
 
 

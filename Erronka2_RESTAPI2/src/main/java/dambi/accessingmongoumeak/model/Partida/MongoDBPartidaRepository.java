@@ -32,7 +32,7 @@ public class MongoDBPartidaRepository implements PartidaRepository {
 
     @PostConstruct
     void init() {
-        partidaCollection = client.getDatabase("Erronka2").getCollection("partida", Partida.class);
+        partidaCollection = client.getDatabase("erronka2").getCollection("partida", Partida.class);
 
     }
 
