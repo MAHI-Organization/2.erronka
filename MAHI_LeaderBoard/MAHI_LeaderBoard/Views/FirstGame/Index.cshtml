@@ -1,0 +1,40 @@
+﻿@*
+  
+*@
+@{
+}
+
+<form action="guardar_datos" method="post" class="cuestionario">
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="tecnologia">¿Te ha gustado el juego?</label><br>
+    <input type="radio" id="tecnologia" name="tecnologia" value="si" onclick="ocultarPorque()"> Sí<br>
+    <input type="radio" id="tecnologia" name="tecnologia" value="no" onclick="mostrarPorque()"> No<br><br>
+
+    <div id="porque" style="display:none;">
+        <label for="porque">¿Por qué no?</label><br>
+        <input type="text" id="porque" name="porque"><br><br>
+    </div>
+
+    <label for="intereses">¿Que mejorarias?</label><br>
+    <textarea id="intereses" name="intereses"></textarea><br><br>
+
+    <label for="mongodb">¿Estás interesado en saber cuales seran los tops de cada semana?</label><br>
+    <input type="radio" id="mongodb" name="mongodb" value="si"> Sí<br>
+    <input type="radio" id="mongodb" name="mongodb" value="no"> No<br><br>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+<script>
+    function mostrarPorque() {
+        document.getElementById("porque").style.display = "block";
+    }
+
+    function ocultarPorque() {
+        document.getElementById("porque").style.display = "none";
+    }
+</script>

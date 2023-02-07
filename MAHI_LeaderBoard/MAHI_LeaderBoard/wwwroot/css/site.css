@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+   
 }
 
 @media (min-width: 768px) {
@@ -9,12 +10,38 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100vh;
+
+   
+}
+
+header {
+    background-image: url("/images/backgroundCircul.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin-bottom: 10px;
 }
 
 body {
-  margin-bottom: 60px;
+    
+    background-image: url("/images/backgroundGames.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin-bottom: 60px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom:100vh;
+}
+.opaque-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    position: static;
+    top: 20px;
 }
 
 #searchForm {
@@ -28,10 +55,12 @@ body {
 
 .carousel-inner {
     height: 400px;
+    width:20px,
 }
 
 .bg-menua {
-    background-color: #dddada !important;
+     background-color: #dddada !important;
+   
 }
 
 .erlatiboa {
@@ -53,13 +82,55 @@ body {
 .jokoak .container2 {
     display: grid;
     grid-template-columns: 40% 40%;
-    height: 800px;
+    height: 600px;
     justify-content: center;
+    align-items: center;
 }
 
 .container2 {
     height: 300px;
 }
+
+.juego1, .juego2, .juego3, .juego4 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin: 10px;
+    transition: transform .2s;
+    box-shadow: 0 0 10px 3px #0077be;
+}
+
+   
+
+.jokoak .container2 .juego1,
+.jokoak .container2 .juego2,
+.jokoak .container2 .juego3,
+.jokoak .container2 .juego4 {
+    transition: transform 0.3s ease-in-out;
+    animation: shadow-pulse 1s infinite;
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 5px 5px #0c93f7a6;
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px #0c93f7a6;
+    }
+
+    100% {
+        box-shadow: 0 0 5px 5px #0c93f7a6;
+    }
+}
+.juego1:hover, .juego2:hover, .juego3:hover, .juego4:hover {
+    
+    animation-play-state: paused;
+    box-shadow: 1px 1px 1000px 10px green;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 
 .juego1 {
     border: 1px solid black;
@@ -80,3 +151,52 @@ body {
     border: 1px solid black;
     margin: 20px 20px 20px 20px;
 }
+/* cuestionarios... */
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+
+.cuestionario{
+
+
+    margin-top: 100px;
+}
+/*...cuestionarios*/
+
+
+
+
