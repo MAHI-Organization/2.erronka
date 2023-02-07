@@ -36,7 +36,7 @@ public class PartidaController {
 	private PartidaRepository partidaRepository;
 
 	@PostMapping(path = "/partidaBerria") // Map ONLY POST Requests
-	public @ResponseBody String addPartidaBerria(@RequestParam int _id, @RequestParam float puntuazioa,
+	public @ResponseBody String addPartidaBerria(@RequestParam int id, @RequestParam float puntuazioa,
 			@RequestParam String data, @RequestParam int idJokoa, @RequestParam String izenaJokoa,
 			@RequestParam String erabiltzaileIzena ) {
 
@@ -44,13 +44,25 @@ public class PartidaController {
 		Langilea langilea = new Langilea(erabiltzaileIzena);
 
 		Partida partida = new Partida();
-		partida.setId(_id);
+		//partida.setId(id);
 		partida.setErabiltzailea(langilea);
 		partida.setPuntuazioa(puntuazioa);
 		partida.setData(data);
 		partida.setJokoa(jokoa);
 		partidaRepository.partidaBerria(partida);
 		return "Saved";
+	}
+
+	@GetMapping(path = "/topPartidak")
+	public @ResponseBody List<Partida> topPartidakIkusi() {
+		// This returns a JSON or XML with the users
+		return partidaRepository.getTopPartidak();
+	}
+
+	@GetMapping(path = "/partidaGuztiak")
+	public @ResponseBody List<Partida> partidakAll() {
+		// This returns a JSON or XML with the users
+		return partidaRepository.findAll();
 	}
 
 }

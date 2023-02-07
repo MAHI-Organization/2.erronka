@@ -15,6 +15,7 @@ import com.mongodb.TransactionOptions;
 import com.mongodb.WriteConcern;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Sorts;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -48,7 +49,7 @@ public class MongoDBPartidaRepository implements PartidaRepository {
 
     @Override
     public Partida save(Partida partida) {
-        partida.setId(0);
+       // partida.setId(0);
         partida.setErabiltzailea(null);
         partida.setPuntuazioa(0);
         partida.setData(null);
@@ -65,9 +66,24 @@ public class MongoDBPartidaRepository implements PartidaRepository {
     @Override
     public Partida partidaBerria(Partida partida) {
         int id = partidaCollection.find().into(new ArrayList<>()).size();
-        partida.setId(id + 1);
+        //partida.setId(id + 1);
         partidaCollection.insertOne(partida);
         return partida;
     }
 
+    @Override
+    public List<Partida> getTopPartidak() {
+        List<Partida> partidaGuztiak = partidaCollection.find().sort(Sorts.descending("puntuazioa")).into(new ArrayList<>());
+        
+        if(partidaGuztiak.size() > 5){
+            int i = partidaGuztiak.size()-1;
+            while(i > 4){
+                partidaGuztiak.remove(i);
+                i--;
+            }
+        }
+        return partidaGuztiak;
+    }
+
+    
 }

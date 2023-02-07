@@ -11,4 +11,6 @@ public interface LangileaRepository {
     Langilea langileBerria(Langilea langilea);
     Langilea langileaGorde(Langilea langilea);
     String deleteById(String erabiltzailea);
+
+    boolean pasahitzZuzena(String erabiltzailea,String pasahitza);
 }

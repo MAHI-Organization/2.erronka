@@ -51,7 +51,6 @@ public class InkestaController {
 	public String deleteInkesta(String erabiltzailea,String jokoarenIzena) {
 		try {
 			return inkestaRepository.delete(erabiltzailea, jokoarenIzena);
-
 		} catch (Exception ex) {
 			System.out.println("Errorea inkesta ezabatzerakoan. ");
 			return "Errorea egon da";

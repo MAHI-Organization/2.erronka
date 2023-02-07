@@ -13,4 +13,7 @@ public interface PartidaRepository {
     long delete(String erabiltzailea);
 
     Partida partidaBerria(Partida partida);
+    List<Partida> getTopPartidak();
+    
+
 }

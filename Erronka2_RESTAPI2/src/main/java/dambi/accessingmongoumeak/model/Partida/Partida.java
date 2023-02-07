@@ -2,26 +2,37 @@ package dambi.accessingmongoumeak.model.Partida;
 
 
 
+
+import org.bson.types.ObjectId;
+
 import dambi.accessingmongoumeak.model.Jokoa;
 import dambi.accessingmongoumeak.model.Langilea.Langilea;
 
 
 public class Partida {
-
-	private int _id;
+	private ObjectId _id;
 	private Langilea erabiltzailea;
 	private float puntuazioa;
 	private String data;
+	//private int id;
 	private Jokoa jokoa;
 
-	public int getId() {
+	public ObjectId get_id() {
 		return _id;
+	}
+
+	public void set_id(ObjectId _id) {
+		this._id = _id;
+	}
+
+	/*public int getId() {
+		return id;
 
 	}
 
 	public void setId(int id) {
-		this._id = id;
-	}
+		this.id = id;
+	}*/
 
 	public Langilea getErabiltzailea() {
 		return erabiltzailea;
@@ -60,5 +71,7 @@ public class Partida {
 		return "Partida [_id=" + _id + ", erabiltzailea=" + erabiltzailea + ", puntuazioa=" + puntuazioa + ", data="
 				+ data + ", jokoa=" + jokoa + "]";
 	}
+
+	
 
 }

@@ -20,6 +20,16 @@ public class Langilea {
         this.izena = "";
 
     }
+
+	public Langilea(String email,String izena,String erabiltzailea,String jaiotzaData,int taldea,String pasahitza){
+		this.email = email;
+		this.izena = izena;
+		this.erabiltzailea = erabiltzailea;
+		this.jaiotzadata = jaiotzaData;
+		this.taldea = taldea;
+		this.pasahitza = pasahitza;
+	}
+
     public Langilea(String izena){  
         this.izena = izena;
 		

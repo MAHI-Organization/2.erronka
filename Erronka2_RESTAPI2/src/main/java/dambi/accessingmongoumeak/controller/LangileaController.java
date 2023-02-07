@@ -45,6 +45,19 @@ public class LangileaController {
 		return langileaRepository.langileaByUser(erabiltzailea);
 	}
 
+	@GetMapping(path = "/pasahitzZuzena{erabiltzailea}/{pasahitza}")
+	public @ResponseBody boolean langileaLogin(String erabiltzailea,String pasahitza) {
+		// This returns a JSON or XML with the users
+		return langileaRepository.pasahitzZuzena(erabiltzailea, pasahitza);
+	}
 
+	@PostMapping(path = "/langileBerria") // Map ONLY POST Requests
+	public @ResponseBody String addPartidaBerria(@RequestParam String email,@RequestParam String izena,@RequestParam String erabiltzailea,@RequestParam String jaiotzaData,@RequestParam int taldea,@RequestParam String pasahitza) {
+
+		Langilea langilea = new Langilea(email,izena,erabiltzailea,jaiotzaData,taldea,pasahitza);
+
+		langileaRepository.langileBerria(langilea);
+		return "Saved";
+	}
 
 }

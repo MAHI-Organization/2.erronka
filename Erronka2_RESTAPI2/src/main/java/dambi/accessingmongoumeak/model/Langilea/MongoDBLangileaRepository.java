@@ -70,6 +70,15 @@ public class MongoDBLangileaRepository implements LangileaRepository {
         }
     }
 
+    @Override
+    public boolean pasahitzZuzena(String erabiltzailea, String pasahitza) {
+        Langilea langilea = langileaCollection.find(eq("erabiltzailea",erabiltzailea)).first();
+        if(langilea != null && langilea.getPasahitza().equals(pasahitza)){
+            return true;
+        }
+        return false;
+    }
+
     
     
 
