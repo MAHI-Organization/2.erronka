@@ -41,7 +41,7 @@ public class LangileaController {
 		n.setEmail(email);
 		n.setIzena(izena);
 		n.setErabiltzailea(erabiltzailea);
-		n.setJaiotzadata(jaiotzadata);
+		n.setJaiotza_data(jaiotzadata);
 		n.setTaldea(taldea);
 		langileaServices.saveLangilea(n);
 		return "Saved";

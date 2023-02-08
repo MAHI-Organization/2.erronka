@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 // This tells Hibernate to make a table out of this class
 @Entity
-@Table(name = "langilea")
+@Table(name = "langilea_langilea")
 public class Langilea {
 
 	private String email;
@@ -29,7 +29,7 @@ public class Langilea {
 	@Id
 	private String erabiltzailea;
 
-	private Date jaiotzadata;
+	private Date jaiotza_data;
 
 	private int taldea;
 
@@ -61,12 +61,12 @@ public class Langilea {
 		this.erabiltzailea = erabiltzailea;
 	}
 
-	public Date getJaiotzadata() {
-		return jaiotzadata;
+	public Date getJaiotza_data() {
+		return jaiotza_data;
 	}
 
-	public void setJaiotzadata(Date jaiotzadata) {
-		this.jaiotzadata = jaiotzadata;
+	public void setJaiotza_data(Date jaiotzadata) {
+		this.jaiotza_data = jaiotzadata;
 	}
 
 	public Integer getTaldea() {

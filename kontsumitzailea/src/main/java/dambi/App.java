@@ -30,7 +30,7 @@ public class App {
             // Conectar a la base de datos MongoDB
             mongoClient = MongoClients.create("mongodb://192.168.65.14:27017");
         
-            MongoDatabase database = mongoClient.getDatabase("erronka2");
+            MongoDatabase database = mongoClient.getDatabase("ev");
             MongoCollection<Document> collection = database.getCollection("partida");
 
             // Realizar una solicitud GET a la API REST de Swagger
@@ -59,7 +59,7 @@ public class App {
             // Registrar la hora de la inserción en un archivo de texto
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String dateString = sdf.format(new Date());
-            FileWriter writer = new FileWriter("log.txt", true);
+            FileWriter writer = new FileWriter("sarrerak.log", true);
             writer.write(dateString + " - Los datos se han insertado correctamente en la base de datos MongoDB.\n");
             writer.close();
 

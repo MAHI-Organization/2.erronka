@@ -1,5 +1,6 @@
 package dambi.accessingrelationaldata.model;
 
+import java.io.Serial;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 @Entity(name = "partida")
-@Table(name = "partida")
+@Table(name = "partida_partida")
 public class Partida {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,7 +30,7 @@ public class Partida {
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "erabiltzailea")
 	@JsonIdentityReference(alwaysAsId = true)
     @ManyToOne
-    @JoinColumn(name = "erabiltzailea", referencedColumnName = "erabiltzailea", foreignKey = @ForeignKey(
+    @JoinColumn(name = "erabiltzailea_name", referencedColumnName = "erabiltzailea", foreignKey = @ForeignKey(
         name = "fk_partida",
         foreignKeyDefinition = "FOREIGN KEY (erabiltzailea)\r\n" +
                 "REFERENCES public.\"langilea\"(erabiltzailea) MATCH SIMPLE\r\n" +

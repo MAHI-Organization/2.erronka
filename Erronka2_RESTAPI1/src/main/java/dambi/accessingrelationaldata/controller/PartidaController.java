@@ -35,7 +35,7 @@ public class PartidaController {
         n.setEmail(email);
         n.setIzena(izena);
         n.setErabiltzailea(erabiltzailea);
-        n.setJaiotzadata(jaiotzadata);
+        n.setJaiotza_data(jaiotzadata);
         n.setTaldea(taldea);
         Partida partida = new Partida();
         partida.setLangilea(n);
