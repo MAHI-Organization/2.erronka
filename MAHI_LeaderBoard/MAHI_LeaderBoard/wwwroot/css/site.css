@@ -1,0 +1,197 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin-bottom: 1%;
+}
+
+body {
+    background-image: url("/images/backgroundGames.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin-bottom: 1%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.opaque-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    position: static;
+    top: 20px;
+}
+
+#searchForm {
+    padding-top: 10%;
+}
+
+.images {
+    width: 120px;
+    height: 70px;
+    margin-top: 5%;
+}
+
+.login {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 2.5%;
+    left: 95%;
+}
+
+.carousel-inner {
+    height: 300px;
+    width: 100%;
+    margin-top: -2%;
+}
+
+.carousel-item {
+    object-fit: contain;
+}
+
+.bg-menua {
+    background-color: #dddada !important;
+}
+
+.erlatiboa {
+    position: relative;
+}
+
+.full-width.dropdown {
+    position: static;
+}
+
+    .full-width.dropdown > .dropdown-menu {
+        left: 0;
+    }
+
+        .full-width.dropdown > .dropdown-menu > li > a {
+            white-space: normal;
+        }
+
+.jokoak .container2 {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    height: 1000px;
+    justify-content: center;
+}
+
+.container2 {
+    height: 300px;
+}
+
+.jokoak .container2 .juego1,
+.jokoak .container2 .juego2,
+.jokoak .container2 .juego3,
+.jokoak .container2 .juego4 {
+    transition: transform 0.3s ease-in-out;
+    animation: shadow-pulse 1s infinite;
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 5px 5px #0c93f7a6;
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px #0c93f7a6;
+    }
+
+    100% {
+        box-shadow: 0 0 5px 5px #0c93f7a6;
+    }
+}
+
+.juego1:hover, .juego2:hover, .juego3:hover, .juego4:hover {
+    animation-play-state: paused;
+    box-shadow: 1px 1px 1000px 10px green;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.juego1, .juego2, .juego3, .juego4 {
+    display: inline-block;
+    transition: transform .2s;
+    box-shadow: 0 0 10px 3px #0077be;
+    margin: 5%;
+    text-align: center;
+}
+
+.juegoImg1, .juegoImg2, .juegoImg3, .juegoImg4 {
+    margin: 20px;
+    width: 70%;
+}
+
+.cuestionario {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+.login2 {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+
+input[type="erabiltzailea"], input[type="pasahitza"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
