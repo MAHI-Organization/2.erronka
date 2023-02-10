@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MAHI_LeaderBoard.props" />
+</Project>

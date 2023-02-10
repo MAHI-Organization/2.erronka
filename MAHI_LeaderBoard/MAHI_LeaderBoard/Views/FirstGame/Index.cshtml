@@ -32,13 +32,12 @@
                 </ul>
 
             </div>
-            <a class="btnLogin" href="https://localhost:7135/Login/Index"><img class="login" src="~/images/login.png" /></a>
+            <a class="btnLogin" asp-controller="Login" asp-action="Index"><img class="login" src="~/images/login.png" /></a>
 
         </div>
     </nav>
-
 </div>
-<form action="guardar_datos" method="post" class="inkestak">
+<form asp-action="Guardar_Datos">
 
     <label for="email">Correo electrónico:</label><br>
     <input type="email" id="email" name="email"><br><br>
@@ -71,31 +70,4 @@
     function ocultarPorque() {
         document.getElementById("porque").style.display = "none";
     }
-
-
-
-    document.querySelector("form.inkestak").addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        var formData = new FormData(this);
-
-        fetch("http://localhost:8080/swagger-ui/index.html/guardar_datos", {
-            method: "POST",
-            body: formData
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Failed to send form data");
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Form data sent successfully", data);
-            })
-            .catch(error => {
-                console.error("Error sending form data", error);
-            });
-    });
-
-
 </script>

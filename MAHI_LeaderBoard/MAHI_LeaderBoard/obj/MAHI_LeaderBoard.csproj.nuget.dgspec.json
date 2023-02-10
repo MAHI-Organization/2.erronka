@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\olivas.hodei\\Desktop\\DAM2\\ERRONKA2\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj": {}
+    "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\olivas.hodei\\Desktop\\DAM2\\ERRONKA2\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj": {
+    "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\olivas.hodei\\Desktop\\DAM2\\ERRONKA2\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj",
+        "projectUniqueName": "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj",
         "projectName": "MAHI_LeaderBoard",
-        "projectPath": "C:\\Users\\olivas.hodei\\Desktop\\DAM2\\ERRONKA2\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj",
-        "packagesPath": "C:\\Users\\olivas.hodei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\olivas.hodei\\Desktop\\DAM2\\ERRONKA2\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\obj\\",
+        "projectPath": "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\MAHI_LeaderBoard.csproj",
+        "packagesPath": "C:\\Users\\soto.aitzol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\olivas.hodei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\soto.aitzol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

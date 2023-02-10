@@ -1,0 +1,13 @@
+﻿@using System.Globalization;
+@model MAHI_LeaderBoard.ViewModels.JokoaViewModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-light">Jokoa ikusi</h1>
+    @foreach (var item in Model.KomentarioaVMList)
+    {
+        <p class="text-light">@item.Erabiltzailea : @item.komentarioa</p>
+    }
+</div>

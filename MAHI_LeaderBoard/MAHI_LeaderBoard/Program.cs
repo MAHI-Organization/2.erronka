@@ -1,7 +1,11 @@
+using MAHI_LeaderBoard.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IKomentarioaService, KomentarioaService>();
 
 var app = builder.Build();
 

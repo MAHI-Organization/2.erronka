@@ -13,47 +13,7 @@ namespace MAHI_LeaderBoard.Controllers
             return View();
         }
         
-        [Route("guardar_datos")]
-        [HttpPost]
-
-        public async Task<IActionResult> GuardarDatos(Inkesta inkestak)
-        {
-            // Verifica que los datos del cuestionario se hayan proporcionado correctamente
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    // Establece la URL de la API
-                    client.BaseAddress = new Uri("http://localhost:8080/swagger-ui/index.html");
-
-                    // Establece el tipo de contenido que se enviará en la petición
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    // Envía los datos del cuestionario a la API
-                    HttpResponseMessage response = await client.PostAsJsonAsync("api/guardar_datos", inkestak);
-
-                    // Verifica si la petición se ha completado correctamente
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return Ok();
-                    }
-                    else
-                    {
-                        return StatusCode(500, response.ReasonPhrase);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
+        
     }
 }
        /* public IActionResult GuardarDatos(Inkesta inkestak)

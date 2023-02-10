@@ -31,7 +31,7 @@
                 </ul>
 
             </div>
-           <div class="home" > <a class="btnLogin" href="https://localhost:7135/Login/Index"><img class="login" src="~/images/login.png" /></a> </div>
+           <div class="home" > <a class="btnLogin" asp-controller="Login" asp-action="Index"><img class="login" src="~/images/login.png" /></a> </div>
 
         </div>
     </nav>
@@ -73,12 +73,16 @@
         <div class="juego1">
             <img class="juegoImg1" src="~/images/T1.png" />
             <h2>Mahi Kingdom</h2>
-            <p></p>
+            <p>
+                <a asp-controller="JokoaIkusi" asp-action="Index" asp-route-id="1">Jokoa ikusi</a>
+            </p>
         </div>
         <div class="juego2">
             <img class="juegoImg2" src="images/juegoImg1.jpg" />
             <h2>Juego2</h2>
-            <p></p>
+            <p>
+                <a asp-controller="JokoaIkusi" asp-action="Index" asp-route-id="2">Jokoa ikusi</a>
+            </p>
         </div>
         <div class="juego3">
             <img class="juegoImg3" src="~/images/T3.png" />
