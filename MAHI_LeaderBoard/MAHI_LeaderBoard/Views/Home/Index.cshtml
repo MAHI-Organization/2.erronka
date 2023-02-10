@@ -2,7 +2,45 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light opaque-nav">
+        <img class="images" src="~/images/logo.png" />
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse erlatiboa" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-center mb-2 mb-lg-0">
+                    <li class="nav-item dropdown full-width">
+                        <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Inkesta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://localhost:7135/FirstGame/Index">1.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">2.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">3.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">4.Jokoa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">Kontaktua</a>
+                    </li>
+                </ul>
+
+            </div>
+           <div class="home" > <a class="btnLogin" href="https://localhost:7135/Login/Index"><img class="login" src="~/images/login.png" /></a> </div>
+
+        </div>
+    </nav>
+    
+</div>
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide mx-auto" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" arialabel="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -10,13 +48,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="~/images/juego1.jpg" alt="First slide">
+            <img class="d-block w-100" src="~/images/T1.png" alt="First slide">
         </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="~/images/juego2.jpg" alt="Second slide">
+        <div class="carousel-item ">
+            <img class="d-block w-100" src="~/images/" alt="Second slide">
         </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="~/images/juego3.jpg" alt="Third slide">
+        <div class="carousel-item ">
+            <img class="d-block w-100" src="~/images/T3.png" alt="Third slide">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -30,20 +68,31 @@
 </div>
 
 
-
 <section class="jokoak">
     <div class="container2">
         <div class="juego1">
-            <img class="" src="" />
+            <img class="juegoImg1" src="~/images/T1.png" />
+            <h2>Mahi Kingdom</h2>
+            <p></p>
         </div>
         <div class="juego2">
-            <img class="" src="" />
+            <img class="juegoImg2" src="images/juegoImg1.jpg" />
+            <h2>Juego2</h2>
+            <p></p>
         </div>
         <div class="juego3">
-            <img class="" src="" />
+            <img class="juegoImg3" src="~/images/T3.png" />
+            <h2>Pouni</h2>
+            <p></p>
         </div>
         <div class="juego4">
-            <img class="" src="" />
+            <img class="juegoImg4" src="images/juegoImg1.jpg" />
+            <h2>Juego4</h2>
+            <p></p>
         </div>
     </div>
 </section>
+
+
+
+
