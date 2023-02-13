@@ -1,6 +1,9 @@
 package dambi.accessingrelationaldata.controller;
 
+
+
 import java.sql.Date;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,14 +31,15 @@ public class PartidaController {
             @RequestParam String erabiltzailea,
             @RequestParam Date jaiotzadata,
             @RequestParam int taldea,
-            @RequestParam float puntuazioa,
-            @RequestParam Date data) {
-
+            @RequestParam float puntuazioa
+           ) {
+        
+        Date data = Date.valueOf(LocalDate.now());
         Langilea n = new Langilea();
         n.setEmail(email);
         n.setIzena(izena);
         n.setErabiltzailea(erabiltzailea);
-        n.setJaiotza_data(jaiotzadata);
+        n.setJaiotzadata(jaiotzadata);
         n.setTaldea(taldea);
         Partida partida = new Partida();
         partida.setLangilea(n);

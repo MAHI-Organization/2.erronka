@@ -27,8 +27,8 @@ public class Partida {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "erabiltzailea")
-	@JsonIdentityReference(alwaysAsId = true)
+    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "erabiltzailea")
+	//@JsonIdentityReference(alwaysAsId = true)
     @ManyToOne
     @JoinColumn(name = "erabiltzailea_name", referencedColumnName = "erabiltzailea", foreignKey = @ForeignKey(
         name = "fk_partida",

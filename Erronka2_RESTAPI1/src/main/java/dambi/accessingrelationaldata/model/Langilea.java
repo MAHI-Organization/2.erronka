@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
@@ -22,15 +23,16 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 @Table(name = "langilea_langilea")
 public class Langilea {
-
+	@Column(name = "email")
 	private String email;
-
+	@Column(name = "izena")
 	private String izena;
 	@Id
+	@Column(name = "erabiltzailea")
 	private String erabiltzailea;
-
-	private Date jaiotza_data;
-
+	@Column(name = "jaiotzadata")
+	private Date jaiotzadata;
+	@Column(name = "taldea")
 	private int taldea;
 
 	
@@ -61,12 +63,12 @@ public class Langilea {
 		this.erabiltzailea = erabiltzailea;
 	}
 
-	public Date getJaiotza_data() {
-		return jaiotza_data;
+	public Date getJaiotzadata() {
+		return jaiotzadata;
 	}
 
-	public void setJaiotza_data(Date jaiotzadata) {
-		this.jaiotza_data = jaiotzadata;
+	public void setJaiotzadata(Date jaiotzadata) {
+		this.jaiotzadata = jaiotzadata;
 	}
 
 	public Integer getTaldea() {
@@ -77,11 +79,11 @@ public class Langilea {
 		this.taldea = taldea;
 	}
 
-	public List<Partida> getPartidak() {
+	/*public List<Partida> getPartidak() {
 		return partidak;
 	}
 
 	public void setPartidak(List<Partida> partidak) {
 		this.partidak = partidak;
-	}
+	}*/
 }
