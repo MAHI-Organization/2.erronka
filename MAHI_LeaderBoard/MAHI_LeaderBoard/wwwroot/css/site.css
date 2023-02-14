@@ -1,16 +1,16 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@media (min-width: 768) {
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 header {
@@ -30,13 +30,15 @@ body {
     margin-bottom: 1%;
     overflow-y: scroll;
     overflow-x: hidden;
+  
 }
 
 .opaque-nav {
     background-color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 40px;
-    position: static;
-    top: 20px;
+    margin-bottom: 80px;
+    position: sticky;
+    top: 10px;
+   
 }
 
 #searchForm {
@@ -44,31 +46,58 @@ body {
 }
 
 .images {
-    width: 120px;
-    height: 70px;
-    margin-top: 5%;
+    width: 100px;
+    height: 95px;
+    border-radius: 100%;
+    box-shadow: 4px 5px 20px 3px black;
+    margin-right:20px;
+    margin-left:20px;
+    position:static;
 }
 
-.login {
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    top: 2.5%;
-    left: 95%;
+@media (max-width: 767px) {
+    #carouselExampleIndicators {
+        max-height: 300px;
+    }
+
+    .carousel-inner img {
+        max-height: 400px;
+        object-fit: cover;
+       
+    }
 }
 
-.carousel-inner {
-    height: 300px;
-    width: 100%;
-    margin-top: -2%;
+@media (min-width: 768px) {
+    #carouselExampleIndicators {
+        max-height: 500px;
+    }
+
+    .carousel-inner img {
+        max-height: 500px;
+        object-fit: cover;
+    }
+}
+.carousel-inner img {
+    max-width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  
+}
+#carouselExampleIndicators {
+    width: 50%;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 10px 10px 10px 2px black;
 }
 
-.carousel-item {
-    object-fit: contain;
-}
+
+
+
 
 .bg-menua {
     background-color: #dddada !important;
+    
 }
 
 .erlatiboa {
@@ -87,15 +116,31 @@ body {
             white-space: normal;
         }
 
+
+
+
+/*Container juegos ...*/
+
 .jokoak .container2 {
     display: grid;
     grid-template-columns: 40% 40%;
     height: 1000px;
     justify-content: center;
+    align-items: center;
 }
 
 .container2 {
     height: 300px;
+}
+
+.juego1, .juego2, .juego3, .juego4 {
+    display: inline-block;
+    transition: transform .2s;
+    box-shadow: 0 0 10px 3px #0077be;
+    margin: 5%;
+    height: 80%;
+    text-align: center;
+    border: 1px solid black;
 }
 
 .jokoak .container2 .juego1,
@@ -104,6 +149,7 @@ body {
 .jokoak .container2 .juego4 {
     transition: transform 0.3s ease-in-out;
     animation: shadow-pulse 1s infinite;
+    background-color: rgba(255, 25, 55,0.2);
 }
 
 @keyframes shadow-pulse {
@@ -127,24 +173,22 @@ body {
     cursor: pointer;
 }
 
-.juego1, .juego2, .juego3, .juego4 {
-    display: inline-block;
-    transition: transform .2s;
-    box-shadow: 0 0 10px 3px #0077be;
-    margin: 5%;
-    text-align: center;
+.jokoak .container2 .juego1:hover, .jokoak .container2 .juego2:hover, .jokoak .container2 .juego3:hover, .jokoak .container2 .juego4:hover {
+    background-color: rgba(255, 25, 55,0.4);
 }
-
 .juegoImg1, .juegoImg2, .juegoImg3, .juegoImg4 {
     margin: 20px;
-    width: 70%;
+    width: 90%;
 }
 
-.cuestionario {
+/* ... Container juegos */
+
+/* cuestionarios... */
+form {
     width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #8988d3e7;
     border-radius: 10px;
 }
 
@@ -164,7 +208,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 input[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #482aa8;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -174,9 +218,41 @@ input[type="submit"] {
 }
 
     input[type="submit"]:hover {
-        background-color: #45a049;
+        background-color: #481bcb;
     }
 
+
+.cuestionario {
+    margin-top: 100px;
+}
+/*...cuestionarios*/
+
+
+
+#imagen {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+.image-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.login {
+    width: 70px;
+    height: 70px;
+    position: static;
+    top: 3%;
+    left: 92%;
+}
+    .login:hover {
+        box-shadow: 1px 1px 30px 3px #0077be;
+        border-radius: 100%;
+    }
 .login2 {
     width: 500px;
     margin: 0 auto;
@@ -186,12 +262,33 @@ input[type="submit"] {
     margin-top: 10%;
 }
 
-input[type="erabiltzailea"], input[type="pasahitza"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+h2{
+    color: white;
+    font-size: 36px;
+
+
+}
+#colorChangeSelect{
+
+    color:royalblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:26px;
+}
+    #colorChangeSelect:hover {
+        color: royalblue;
+    }
+#navbarDropdown {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 26px;
+    
+}
+    #navbarDropdown:hover {
+        color: royalblue;
+    }

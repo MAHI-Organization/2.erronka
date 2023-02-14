@@ -10,29 +10,18 @@
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
 </head>
 <body>
+   
     <header>
-        <div>
-             <div class="container">
-                 <div class="row">
-                     <div class="col-md-6">
-                         <img class="images" src="~/images/logo.png" />
-                     </div>
-                     <div class=""col-md-6">
-                        <a class="btnLogin" href="https://localhost:7135/Login/Index"><img class="login" src="~/images/login.png" /></a>
-                     </div>
-                 </div>
-             </div>
-
-             <main role="main" class="pb-3">
-             @RenderBody()
-             </main>
-        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">

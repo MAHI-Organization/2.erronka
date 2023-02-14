@@ -1,10 +1,44 @@
 ﻿@*
-
+  
 *@
 @{
 }
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light opaque-nav">
+        <img class="images" src="~/images/logo.png" />
+        <div class="container-fluid">
+            <a class="navbar-brand" id="navbarDropdown" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse erlatiboa" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-center mb-2 mb-lg-0">
+                    <li class="nav-item dropdown full-width">
+                        <a class="navbar-brand dropdown-toggle" href="#" id="colorChangeSelect" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Inkesta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://localhost:7135/FirstGame/Index">Mahi Kingdom</a></li>
+                            <li><a class="dropdown-item" href="#">2.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">3.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">4.Jokoa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" id="navbarDropdown" href="#">Kontaktua</a>
+                    </li>
+                </ul>
 
-<form action="guardar_datos" method="post" class="cuestionario">
+            </div>
+            <a class="btnLogin" href="https://localhost:7135/Login/Index"><img class="login" src="~/images/login.png" /></a>
+
+        </div>
+    </nav>
+
+</div>
+@* <form action="guardar_datos" method="post" class="inkestak">
 
     <label for="email">Correo electrónico:</label><br>
     <input type="email" id="email" name="email"><br><br>
@@ -27,7 +61,34 @@
 
     <input type="submit" value="Enviar">
 
+</form>*@
+
+<form asp-action="GuardarDatos" method="post" class="inkestak">
+    <label for="erabiltzailea">Nombre del usuario:</label>
+    <input type="text" id="erabiltzailea" name="erabiltzailea" required>
+   
+
+    <label for="jokoaID">ID del juego:</label>
+    <input type="number" id="jokoaID" name="jokoaID" required>
+
+    <label for="jokoarenIzena">Nombre del juego:</label>
+    <input type="text" id="jokoarenIzena" name="jokoarenIzena" required>
+
+    <label for="lehenengoGaldera">Primera pregunta:</label>
+    <input type="text" id="lehenengoGaldera" name="lehenengoGaldera" required>
+
+    <label for="bigarrenGaldera">Segunda pregunta:</label>
+    <input type="text" id="bigarrenGaldera" name="bigarrenGaldera" required>
+
+    <label for="hirugarrenGaldera">Tercera pregunta:</label>
+    <input type="text" id="hirugarrenGaldera" name="hirugarrenGaldera" required>
+
+    <label for="laugarrenGaldera">Cuarta pregunta:</label>
+    <input type="text" id="laugarrenGaldera" name="laugarrenGaldera" required>
+
+    <input type="submit" value="Enviar">
 </form>
+
 
 <script>
     function mostrarPorque() {
@@ -37,4 +98,31 @@
     function ocultarPorque() {
         document.getElementById("porque").style.display = "none";
     }
+
+
+
+    //document.querySelector("form.inkestak").addEventListener("submit", function (event) {
+    //    event.preventDefault();
+
+    //    var formData = new FormData(this);
+
+    //    fetch("http://192.168.65.14:8080/inkestak/inkestaGuztiak", {
+    //        method: "POST",
+    //        body: formData
+    //    })
+    //        .then(response => {
+    //            if (!response.ok) {
+    //                throw new Error("Failed to send form data");
+    //            }
+    //            return response.json();
+    //        })
+    //        .then(data => {
+    //            console.log("Form data sent successfully", data);
+    //        })
+    //        .catch(error => {
+    //            console.error("Error sending form data", error);
+    //        });
+    //});
+
+
 </script>
