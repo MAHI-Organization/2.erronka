@@ -11,6 +11,7 @@ public interface BalorazioaRepository {
     void deleteByErabiltzaileaJokoa(String izena,String jokoa);
     Balorazioa save(Balorazioa balorazioa);
     float batazBestekoBalorazioa(String jokoarenIzena);
+    List<Balorazioa> jokoarenBalorazioa(String jokoarenIzena);
 }
 
 

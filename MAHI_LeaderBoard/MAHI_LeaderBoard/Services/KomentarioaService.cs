@@ -5,7 +5,7 @@ namespace MAHI_LeaderBoard.Services
 {
     public class KomentarioaService : IKomentarioaService
     {
-        private Uri rutaTodos = new Uri("http://192.168.65.14:8080/komentarioak/");
+        private Uri rutaTodos = new Uri("http://localhost:8080/komentarioak/");
         public async Task<List<Komentarioa>> GetKomentarioGuztiak()
         {
             List<Komentarioa> komentarioakList = new List<Komentarioa>();

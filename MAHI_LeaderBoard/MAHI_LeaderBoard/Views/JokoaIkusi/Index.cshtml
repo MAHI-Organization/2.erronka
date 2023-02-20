@@ -4,10 +4,52 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="container">
-    <h1 class="text-light">Jokoa ikusi</h1>
-    @foreach (var item in Model.KomentarioaVMList)
-    {
-        <p class="text-light">@item.Erabiltzailea : @item.komentarioa</p>
-    }
+<div class="container komentario">
+    <h1 class="text-light">@Html.DisplayFor(modelItem => Model.JokoaIzena)</h1>
+    <div>
+        <img class="juegoImg1" src="~/images/T1.png" />
+    </div>
+
+    <div>
+        <h3 class="text-light">Bataz besteko balorazioa</h3>
+        <div class="d-flex">
+            <h4 class="text-light">@Html.DisplayFor(modelItem => Model.BatazBestekoBalorazioa)</h4>
+            @for (int i = 0; i < (int)Model.BatazBestekoBalorazioa; i++)
+            {
+                <img width="3%" src="~/images/star.png" />
+            }
+        </div>
+
+        <h3 class="text-light">Balorazioak</h3>
+        @foreach (var item in Model.BalorazioakVMList)
+        {
+            <div class="d-flex">
+                <p class="text-light">@item.erabiltzailea</p>
+                @for (int i = 0; i < item.balorazioa; i++)
+                {
+                    <img width="2%" src="~/images/star.png" />
+                }
+            </div>
+        }
+        <form>
+            <label for="balorazioBerria">JokoaBaloratu</label><br>
+            <input type="number" max="5" min="0" id="balorazioBerria" name="balorazioa"><br>
+
+            <input type="submit" value="Bidali" />
+        </form>
+    </div>
+    
+    <div>
+        <h3 class="text-light">Komentarioak</h3>
+        @foreach (var item in Model.KomentarioaVMList)
+        {
+            <p class="text-light">@item.Erabiltzailea : @item.komentarioa</p>
+        }
+        <form>
+            <label for="komentarioBerria">Komentario Berria</label><br>
+            <input type="text" id="komentarioBerria" name="komentario"><br>
+
+            <input type="submit" value="Bidali" />
+        </form>
+    </div>
 </div>
