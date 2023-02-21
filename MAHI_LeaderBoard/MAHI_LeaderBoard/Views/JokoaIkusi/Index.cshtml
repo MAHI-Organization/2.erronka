@@ -9,6 +9,16 @@
     <div>
         <img class="juegoImg1" src="~/images/T1.png" />
     </div>
+    <div>
+        <h3 class="text-light">Ranking-a:</h3>
+        @foreach (var item in Model.PartidaVMList)
+        {
+            if(item.puntuazioa > 0)
+            {
+                <p class="text-light">Erabiltzailea: @item.langilea.erabiltzailea, Puntuazioa: @item.puntuazioa</p>
+            }
+        }
+    </div>
 
     <div>
         <h3 class="text-light">Bataz besteko balorazioa</h3>
