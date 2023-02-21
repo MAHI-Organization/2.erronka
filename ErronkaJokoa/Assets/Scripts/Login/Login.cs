@@ -40,4 +40,9 @@ public class Login : MonoBehaviour
         }
 
     }
+
+    public void Itxi()
+    {
+        Application.Quit();
+    }
 }
