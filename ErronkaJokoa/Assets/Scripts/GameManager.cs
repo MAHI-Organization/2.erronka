@@ -1,7 +1,9 @@
+using Mono.Data.Sqlite;
 using Npgsql;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        DatuBaseanGorde();
+        //DatuBaseanGorde();
     }
 
     // Update is called once per frame
@@ -26,9 +28,27 @@ public class GameManager : MonoBehaviour
         
     }
 
+    
+
+    public void SQLPartidaGorde()
+    {
+        List<Partida> partidak = new List<Partida>();
+        string connection = "URI=file:" + Application.dataPath + "/jokoadb.db";
+        IDbConnection dbcon = new SqliteConnection(connection);
+        dbcon.Open();
+
+        IDbCommand cmnd_read = dbcon.CreateCommand();
+        IDataReader reader; 
+        string query = "insert into partida(erabiltzailea_name,data,puntuazioa) values ('"+PlayerPrefs.GetString("Erabiltzailea")+"','"+DateTime.Now+"',"+puntuazioa+")";
+        cmnd_read.CommandText = query;
+        cmnd_read.ExecuteNonQuery();
+        dbcon.Close();
+    }
+
     public void PartidaGorde()
     {
-        List<DatosPartida> partidak = SaveSystem.CargarDatos();
+        SQLPartidaGorde();
+        /*List<DatosPartida> partidak = SaveSystem.CargarDatos();
         DatosPartida jokatutakoPartida;
         if (partidak != null)
         {
@@ -42,10 +62,10 @@ public class GameManager : MonoBehaviour
         Debug.Log(jokatutakoPartida.ToString());
         Debug.Log("Partidas totales: " + partidak.Count);
         partidak.Add(jokatutakoPartida);
-        SaveSystem.GuardarDatos(partidak);
+        SaveSystem.GuardarDatos(partidak);*/
     }
 
-    public void DatuBaseanGorde()
+   /* public void DatuBaseanGorde()
     {
         try
         {
@@ -75,11 +95,11 @@ public class GameManager : MonoBehaviour
             //Debug.LogException(e);
             Debug.Log("Ezin izan dira datuak gorde");
         }
-    }
+    }*/
 
 
     /*Sartutako erabiltzailea existitzen dela konprobatzeko metodoa*/
-    private bool ErabiltzaileaExistitzenDa(string erabiltzailea)
+    /*private bool ErabiltzaileaExistitzenDa(string erabiltzailea)
     {
         try
         {
@@ -105,7 +125,7 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-
+    */
     public void PuntuazioaGehitu(int puntos)
     {
         puntuazioa += puntos;

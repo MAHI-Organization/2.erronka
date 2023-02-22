@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IKomentarioaService, KomentarioaService>();
+builder.Services.AddScoped<IBalorazioaService, BalorazioaService>();
+builder.Services.AddScoped<IPartidaService, PartidaService>();
 
 var app = builder.Build();
 

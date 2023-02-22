@@ -49,6 +49,11 @@ public class BalorazioaController {
 		return balorazioaRepository.batazBestekoBalorazioa(jokoarenIzena);
 	}
 
+	@GetMapping(path = "/jokoarenBalorazioak")
+	public @ResponseBody List<Balorazioa> getJokoarenBalorazioak(String jokoarenIzena) {
+		return balorazioaRepository.jokoarenBalorazioa(jokoarenIzena);
+	}
+
 	/*@GetMapping(path = "/balorazioaByIzena")
 	public @ResponseBody Balorazioa getBalorazioaByIzena(String izena,String jokoa) {
 		return balorazioaRepository.findByErabiltzaileaJokoa(izena,jokoa);

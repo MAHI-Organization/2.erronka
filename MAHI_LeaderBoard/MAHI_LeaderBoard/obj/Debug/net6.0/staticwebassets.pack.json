@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\images\\pez.gif"
     },
     {
+      "Id": "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\wwwroot\\images\\star.png",
+      "PackagePath": "staticwebassets\\images\\star.png"
+    },
+    {
       "Id": "C:\\Users\\soto.aitzol\\Desktop\\MAHI_LeaderBoard\\MAHI_LeaderBoard\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

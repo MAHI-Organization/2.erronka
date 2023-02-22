@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6634545211848304206}
   - component: {fileID: 2584343290499567300}
   - component: {fileID: 4229941461753083813}
-  - component: {fileID: 3666953861741665050}
+  - component: {fileID: 3398532915642684150}
   m_Layer: 0
   m_Name: BulletPlanta
   m_TagString: Untagged
@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,6 +46,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -132,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3666953861741665050
+--- !u!114 &3398532915642684150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2302885840082586190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ad907b340888a419583bed03c085c6, type: 3}
+  m_Script: {fileID: 11500000, guid: e37b0ca572897f540a25e5d4cc2737d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

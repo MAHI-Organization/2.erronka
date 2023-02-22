@@ -29,6 +29,7 @@ public class SaludJugador : MonoBehaviour
         if(vidas <= 0 || transform.position.y < -9)
         {
             GameManager.instance.PartidaGorde();
+            TcpBezero.instance.DatuakBidali();
             menuGameOver.SetActive(true);
             gameObject.SetActive(false);
         }

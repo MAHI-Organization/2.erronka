@@ -62,6 +62,7 @@ public class MongoDBBalorazioaRepository implements BalorazioaRepository {
             }
         }
         batazBestekoBalorazioa = balorazioaGuztira / balorazioKantitatea;
+
         return batazBestekoBalorazioa;
     }
 
@@ -90,4 +91,11 @@ public class MongoDBBalorazioaRepository implements BalorazioaRepository {
             query.put("$and", andList);
             balorazioaCollection.deleteMany(query);
         }
+    }
+
+    @Override
+    public List<Balorazioa> jokoarenBalorazioa(String jokoarenIzena) {
+        // TODO Auto-generated method stub
+        List<Balorazioa>balorazioak = balorazioaCollection.find(eq("jokoa.izena", jokoarenIzena)).into(new ArrayList<>());
+        return balorazioak;
     }}
