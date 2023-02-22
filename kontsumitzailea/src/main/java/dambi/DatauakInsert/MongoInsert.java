@@ -2,6 +2,7 @@ package dambi.DatauakInsert;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,7 +28,6 @@ public class MongoInsert {
 
     private static String dbStr = "erronka2";
     private static String collectionPartida = "partida";
-    
 
     public static MongoClient connect() {
         CodecRegistry pojoCodecRegistry = CodecRegistries.fromRegistries(
@@ -41,7 +41,7 @@ public class MongoInsert {
         return mongoClient;
     }
 
-    public static void insertPartidak(List<Partida> partidak, String jokoa) throws IOException {
+    public static void insertPartidak(List<Partida> partidak, String jokoa) throws IOException, ParseException {
         try {
             MongoClient mongo = connect();
             MongoDatabase db = mongo.getDatabase(dbStr);
@@ -53,19 +53,109 @@ public class MongoInsert {
             int count = 0;
             for (Partida partida : partidak) {
                 Langilea lang = new Langilea();
+                Document part = new Document();
+                
+                if(jokoa == "Taldea2"){
+                sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+                Date date;
+                dateString = partida.getLangilea().getJaiotzadata().toString();
                 lang.setEmail(partida.getLangilea().getEmail());
                 lang.setIzena(partida.getLangilea().getIzena());
                 lang.setErabiltzailea(partida.getLangilea().getErabiltzailea());
-                lang.setJaiotzadata(partida.getLangilea().getJaiotzadata());
+                date = sdf.parse(partida.getLangilea().getJaiotzadata().toString());
+                lang.setJaiotzadata(date);
                 lang.setTaldea(partida.getLangilea().getTaldea());
 
-                Document part = new Document();
+                
                 part.put("id", partida.getId());
                 part.put("langilea", lang);
                 part.put("puntuazioa", partida.getPuntuazioa());
-                part.put("data", partida.getData().toString());
+                date = sdf.parse(sdf.format(partida.getData().toString()));
+                part.put("data", date);
                 part.put("jokoa", jokoa);
-                System.out.println(part);
+                }else if(jokoa == "MahiKingdom"){
+                   
+                    
+                    lang.setEmail(partida.getLangilea().getEmail());
+                    lang.setIzena(partida.getLangilea().getIzena());
+                    lang.setErabiltzailea(partida.getLangilea().getErabiltzailea());
+                    
+                    lang.setJaiotzadata(partida.getLangilea().getJaiotzadata());
+                    lang.setTaldea(partida.getLangilea().getTaldea());
+    
+                    
+                    part.put("id", partida.getId());
+                    part.put("langilea", lang);
+                    part.put("puntuazioa", partida.getPuntuazioa());
+                    
+                    part.put("data", partida.getData().toString());
+                    part.put("jokoa", jokoa);
+                    
+    
+                    
+                }else if(jokoa == "Pouni"){
+                    sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                    Date date;
+                    
+                    lang.setEmail(partida.getLangilea().getEmail());
+                    lang.setIzena(partida.getLangilea().getIzena());
+                    lang.setErabiltzailea(partida.getLangilea().getErabiltzailea());
+                    date = sdf.parse(partida.getLangilea().getJaiotzadata().toString());
+                    lang.setJaiotzadata(date);
+                    lang.setTaldea(partida.getLangilea().getTaldea());
+    
+                    
+                    part.put("id", partida.getId());
+                    part.put("langilea", lang);
+                    part.put("puntuazioa", partida.getPuntuazioa());
+                    date = sdf.parse(sdf.format(partida.getData().toString()));
+                    part.put("data", date);
+                    part.put("jokoa", jokoa);
+                    
+                }
+                else if(jokoa == "Pouni"){
+                    sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                    Date date;
+                    dateString = partida.getLangilea().getJaiotzadata().toString();
+                    lang.setEmail(partida.getLangilea().getEmail());
+                    lang.setIzena(partida.getLangilea().getIzena());
+                    lang.setErabiltzailea(partida.getLangilea().getErabiltzailea());
+                    date = sdf.parse(partida.getLangilea().getJaiotzadata().toString());
+                    lang.setJaiotzadata(date);
+                    lang.setTaldea(partida.getLangilea().getTaldea());
+    
+                    
+                    part.put("id", partida.getId());
+                    part.put("langilea", lang);
+                    part.put("puntuazioa", partida.getPuntuazioa());
+                    date = sdf.parse(sdf.format(partida.getData().toString()));
+                    part.put("data", date);
+                    part.put("jokoa", jokoa);
+                    
+               
+                    
+                }else if(jokoa == "Johnny"){
+                    
+                    
+                    lang.setEmail(partida.getLangilea().getEmail());
+                    lang.setIzena(partida.getLangilea().getIzena());
+                    lang.setErabiltzailea(partida.getLangilea().getErabiltzailea());
+                    
+                    lang.setJaiotzadata(partida.getLangilea().getJaiotzadata());
+                    lang.setTaldea(partida.getLangilea().getTaldea());
+    
+                    
+                    part.put("id", partida.getId());
+                    part.put("langilea", lang);
+                    part.put("puntuazioa", partida.getPuntuazioa());
+                    
+                    part.put("data", partida.getData().toString());
+                    part.put("jokoa", jokoa);
+                    
+                   
+                }
+                
+                 System.out.println(part);
                 Document found = collection.find(Filters.and(Filters.eq("id", part.getInteger("id")),
                         Filters.eq("langilea", part.getString("erabiltzailea")))).first();
                 if (found == null) {

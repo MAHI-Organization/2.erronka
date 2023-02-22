@@ -26,6 +26,7 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,14 +50,15 @@ import com.google.gson.JsonParser;
 public class App {
 
     private static String taldea1 = "http://192.168.65.11:8080/api/allPartidak";
-    private static String taldea2 = "http://192.168.65.22:8080/demo/all_Partida";
+    private static String taldea2 = "192.168.65.90:8081/demo/all_Partida";
     private static String taldea3 = "http://192.168.65.12:8080/proba/getCollectionsT3";
     private static String taldea4 = "http://192.168.65.123:8080/Partidak/getPartidak";
 
     /**
      * @param args
+     * @throws ParseException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         insertPartidak(taldea1, "MahiKingdom");
         insertPartidak(taldea2, "Taldea2");
@@ -65,7 +67,7 @@ public class App {
 
     }
 
-    public static void insertPartidak(String url, String jokoa) {
+    public static void insertPartidak(String url, String jokoa) throws ParseException {
         JsonArray data;
         try {
 
@@ -86,7 +88,7 @@ public class App {
 
         } catch (NullPointerException | IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            
         }
 
     }
