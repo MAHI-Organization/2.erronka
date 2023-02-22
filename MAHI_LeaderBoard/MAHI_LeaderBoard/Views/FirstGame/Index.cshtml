@@ -1,0 +1,73 @@
+﻿@*
+  
+*@
+@{
+}
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light opaque-nav">
+        <img class="images" src="~/images/logo.png" />
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse erlatiboa" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-center mb-2 mb-lg-0">
+                    <li class="nav-item dropdown full-width">
+                        <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Inkesta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://localhost:7135/FirstGame/Index">1.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">2.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">3.Jokoa</a></li>
+                            <li><a class="dropdown-item" href="#">4.Jokoa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">Kontaktua</a>
+                    </li>
+                </ul>
+
+            </div>
+            <a class="btnLogin" asp-controller="Login" asp-action="Index"><img class="login" src="~/images/login.png" /></a>
+
+        </div>
+    </nav>
+</div>
+<form asp-action="Guardar_Datos">
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="tecnologia">¿Te ha gustado el juego?</label><br>
+    <input type="radio" id="tecnologia" name="tecnologia" value="si" onclick="ocultarPorque()"> Sí<br>
+    <input type="radio" id="tecnologia" name="tecnologia" value="no" onclick="mostrarPorque()"> No<br><br>
+
+    <div id="porque" style="display:none;">
+        <label for="porque">¿Por qué no?</label><br>
+        <input type="text" id="porque" name="porque"><br><br>
+    </div>
+
+    <label for="intereses">¿Que mejorarias?</label><br>
+    <textarea id="intereses" name="intereses"></textarea><br><br>
+
+    <label for="mongodb">¿Estás interesado en saber cuales seran los tops de cada semana?</label><br>
+    <input type="radio" id="mongodb" name="mongodb" value="si"> Sí<br>
+    <input type="radio" id="mongodb" name="mongodb" value="no"> No<br><br>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+<script>
+    function mostrarPorque() {
+        document.getElementById("porque").style.display = "block";
+    }
+
+    function ocultarPorque() {
+        document.getElementById("porque").style.display = "none";
+    }
+</script>

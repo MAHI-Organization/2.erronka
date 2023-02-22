@@ -1,0 +1,11 @@
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\bin\Debug\Informe.rdlc
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\bin\Debug\ReportMAHILeaderBoard.exe.config
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\bin\Debug\ReportMAHILeaderBoard.exe
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\bin\Debug\ReportMAHILeaderBoard.pdb
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.csproj.AssemblyReference.cache
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.csproj.SuggestedBindingRedirects.cache
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.Properties.Resources.resources
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.csproj.GenerateResource.cache
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.csproj.CoreCompileInputs.cache
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.exe
+D:\2.erronka-experimental\MAHI_LeaderBoard\ReportMAHILeaderBoard\obj\Debug\ReportMAHILeaderBoard.pdb

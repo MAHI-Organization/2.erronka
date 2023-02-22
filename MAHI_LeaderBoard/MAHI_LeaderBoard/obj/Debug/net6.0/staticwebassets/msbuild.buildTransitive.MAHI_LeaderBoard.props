@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MAHI_LeaderBoard.props" />
+</Project>
