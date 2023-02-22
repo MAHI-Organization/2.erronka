@@ -1,0 +1,103 @@
+2023-02-10 08:23:46 - Ondo sartu dira 1. taldearen datuak
+2023-02-10 08:25:13 - Ondo sartu dira 1. taldearen datuak
+2023-02-10 12:28:19 - Ondo sartu dira 1. taldearen datuak
+2023-02-10 12:33:55 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 08:46:42 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 08:57:22 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 09:00:21 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 09:36:12 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 09:53:00 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 10:13:23 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 10:15:49 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 10:16:04 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 10:16:52 - Ondo sartu dira 1. taldearen datuak
+2023-02-13 11:49:08 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:08:48 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:09:09 - Ondo sartu dira 3. taldearen datuak
+2023-02-14 12:13:45 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:18:54 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:19:18 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:19:55 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:27:09 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:27:09 - Ondo sartu dira 4. taldearen datuak
+2023-02-14 12:33:09 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:33:10 - Ondo sartu dira 4. taldearen datuak
+2023-02-14 12:34:24 - Ondo sartu dira 1. taldearen datuak
+2023-02-14 12:34:24 - Ondo sartu dira 4. taldearen datuak
+2023-02-15 08:10:48 - Ondo sartu dira 1. taldearen datuak
+2023-02-15 08:10:48 - Ondo sartu dira 4. taldearen datuak
+2023-02-15 08:16:24 - ez da daturik sartu
+2023-02-15 08:16:24 - Ondo sartu dira 1. taldearen datuak
+2023-02-15 08:16:24 - ez da daturik sartu
+2023-02-15 08:16:24 - Ondo sartu dira 4. taldearen datuak
+2023-02-15 08:24:06 - ez da daturik sartu
+2023-02-15 08:24:06 - ez da daturik sartu
+2023-02-15 08:29:08 - Ondo sartu dira 1. taldearen datuak
+2023-02-15 08:29:08 - ez da daturik sartu
+2023-02-15 08:33:41 - ez da daturik sartu
+2023-02-15 08:34:02Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.22:8080/demo/all_Partida
+2023-02-15 08:37:21 - ez da daturik sartu
+2023-02-15 08:37:42Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.22:8080/demo/all_Partida
+2023-02-15 08:38:03Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-15 08:38:03 - ez da daturik sartu
+2023-02-15 08:41:07 - Ez dira 1. taldearen datuak sartu
+2023-02-15 08:41:28Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.22:8080/demo/all_Partida
+2023-02-15 08:41:49Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-15 08:41:49 - Ez dira 4. taldearen datuak sartu
+2023-02-15 08:42:24 - Ondo sartu dira 1. taldearen datuak
+2023-02-15 08:42:45Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.22:8080/demo/all_Partida
+2023-02-15 08:43:06Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-15 08:43:06 - Ez dira 4. taldearen datuak sartu
+2023-02-22 08:11:47Errorea ApiRest-era konektatzean:Connection refused: connect URL:http://192.168.65.11:8080/api/allPartidak
+2023-02-22 08:12:08Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.22:8080/demo/all_Partida
+2023-02-22 08:12:30Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 08:12:31 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 08:16:11Errorea ApiRest-era konektatzean:Connection refused: connect URL:http://192.168.65.11:8080/api/allPartidak
+2023-02-22 08:16:29Errorea ApiRest-era konektatzean:Connection refused: connect URL:http://192.168.65.11:8080/api/allPartidak
+2023-02-22 08:16:50Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 08:16:50 - Ez dira 4. taldearen datuak sartu
+2023-02-22 08:18:10 - Ez dira 1. taldearen datuak sartu
+2023-02-22 08:18:31Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 08:18:31 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:00:28 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:00:49Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:00:49 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:00:51 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:01:13Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:01:13 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:07:56 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:08:17Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:08:18 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:08:19 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:08:40Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:08:40 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:22:39 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:23:00Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:23:01 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:24:36 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:24:59 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:25:20Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:27:39 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:28:00Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:28:00 - Ez dira 4. taldearen datuak sartu
+2023-02-22 09:35:54 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:36:15Errorea ApiRest-era konektatzean:Connection timed out: connect URL:http://192.168.65.12:8080/proba/getCollectionsT3
+2023-02-22 09:36:15 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:38:33 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:38:33 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:41:05 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:41:05 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:42:50 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:42:51 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:43:12 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:43:12 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:45:28 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:45:28 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:47:58 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:47:58 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:48:51 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:48:51 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:49:53 - Ondo sartu dira 1. taldearen datuak
+2023-02-22 09:49:53 - Ondo sartu dira 4. taldearen datuak
+2023-02-22 09:50:45 - Ez dira 1. taldearen datuak sartu
+2023-02-22 09:50:45 - Ez dira 4. taldearen datuak sartu
