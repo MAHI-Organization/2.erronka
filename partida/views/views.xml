@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="partida.list">
+      <field name="name">partida list</field>
+      <field name="model">partida.partida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="erabiltzailea_name"/>
+          <field name="puntuazioa"/>
+          <field name="data"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partida.action_window">
+      <field name="name">partida window</field>
+      <field name="res_model">partida.partida</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.server" id="partida.action_server">
+      <field name="name">partida server</field>
+      <field name="model_id" ref="model_partida_partida"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+    <menuitem name="partida" id="partida.menu_root"/>
+
+    <menuitem name="Menu 1" id="partida.menu_1" parent="partida.menu_root"/>
+
+    <menuitem name="List" id="partida.menu_1_list" parent="partida.menu_1"
+              action="partida.action_window"/>
+  </data>
+</odoo>

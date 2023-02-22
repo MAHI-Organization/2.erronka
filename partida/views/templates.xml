@@ -1,0 +1,130 @@
+<odoo>
+    <data>
+        <!--Ranking-a aukeratzeko menua-->
+        <template id="listing">
+          <ul>
+                <h1>Langileak</h1>
+                <li t-foreach="langileak" t-as="langilea">
+                  <a t-attf-href="#{ root }/langileak/#{ langilea.erabiltzailea }/#{ langilea.taldea }">
+                      ID:<t t-esc="langilea.id"/>, Erabiltzailea:<t t-esc="langilea.erabiltzailea"/>
+                  </a>
+                </li>
+
+              <h1>Enpresak</h1>
+                <li>
+                    <a t-attf-href="#{ root }/enpresa/#{ 1 }">MAHI</a>
+                </li>
+                <li>
+                    <a t-attf-href="#{ root }/enpresa/#{ 2 }">HJAA</a>
+                </li>
+                <li>
+                    <a t-attf-href="#{ root }/enpresa/#{ 3 }">PCBOX</a>
+                </li>
+                <li>
+                    <a t-attf-href="#{ root }/enpresa/#{ 4 }">NumberOne</a>
+                </li>
+
+               <h1>Adina</h1>
+                <li>
+                    <a t-attf-href="#{ root }/adina/#{ '%3E' }/#{ 'Gazteak' }">Gazteak</a>
+                </li>
+                <li>
+                    <a t-attf-href="#{ root }/adina/#{ '%3C=' }/#{ 'Beteranoak' }">Beteranoak</a>
+                </li>
+          </ul>
+        </template>
+
+
+        <!--Langile bakoitzaren partidak erakusteko template-a-->
+        <template id="partidak">
+          <h1>Partidak</h1>
+          <h3>
+              Erabiltzailea: <t t-esc="object"/>
+              <t t-if="taldea == 1">
+                  , Enpresa: MAHI
+              </t>
+              <t t-if="taldea == 2">
+                  , Enpresa: HJAA
+              </t>
+              <t t-if="taldea == 3">
+                  , Enpresa: PCBOX
+              </t>
+              <t t-if="taldea == 4">
+                  , Enpresa: NumberOne
+              </t>
+          </h3>
+
+          <ul>
+              <div t-foreach="objects.sorted(key=lambda x: x.puntuazioa ,reverse=True)" t-as="partida">
+                  <t t-if="object == partida.erabiltzailea_name">
+                      <h5>ID: <t t-esc="partida.id"/> , Puntuazioa: <t t-esc="partida.puntuazioa"/> , Data: <t t-esc="partida.data.strftime('%d/%m/%Y')"/></h5>
+                  </t>
+              </div>
+          </ul>
+        </template>
+
+        <!--Enpresako ranking-a erakusten duen  template-a-->
+        <template id="enpresak">
+            <h1>
+                <t t-if="taldezenb == 1">
+                    MAHI
+                </t>
+                <t t-if="taldezenb == 2">
+                    HJAA
+                </t>
+                <t t-if="taldezenb == 3">
+                    PCBOX
+                </t>
+                <t t-if="taldezenb == 4">
+                    NumberOne
+                </t>
+            </h1>
+            <ul>
+                <t t-foreach="objects.sorted(key=lambda x: x.puntuazioa ,reverse=True)" t-as="partida">
+                    <t t-foreach="langileak" t-as="langile">
+                        <t t-if="partida.erabiltzailea_name == langile.erabiltzailea">
+                            <h5>ID: <t t-esc="partida.id"/>,Erabiltzailea: <t t-esc="partida.erabiltzailea_name"/> , Puntuazioa: <t t-esc="partida.puntuazioa"/> , Data: <t t-esc="partida.data.strftime('%d/%m/%Y')"/></h5>
+                        </t>
+                    </t>
+                </t>
+            </ul>
+        </template>
+
+        <!--Ranking-a adinaren arabera-->
+        <template id="adina">
+            <ul>
+                <h1><t t-esc="type"/></h1>
+                <t t-foreach="objects.sorted(key=lambda x: x.puntuazioa ,reverse=True)" t-as="partida">
+                    <t t-foreach="langileak" t-as="langile">
+                        <t t-if="partida.erabiltzailea_name == langile.erabiltzailea">
+                            <h5>ID: <t t-esc="partida.id"/>,Erabiltzailea: <t t-esc="partida.erabiltzailea_name"/> , Puntuazioa: <t t-esc="partida.puntuazioa"/> , Data: <t t-esc="partida.data.strftime('%d/%m/%Y')"/> ,Jaiotza Data: <t t-esc="langile.jaiotzadata.strftime('%d/%m/%Y')"/></h5>
+                        </t>
+                    </t>
+                </t>
+            </ul>
+        </template>
+<!--
+        <template id="listing">
+          <h1>Langileak</h1>
+          <ul>
+              <li t-foreach="objects" t-as="object">
+                  <a t-attf-href="#{ root }/objects/#{ object.id }">
+                      <t t-esc="object.erabiltzailea_name"></t>
+                  </a>
+              </li>
+          </ul>
+        </template>
+-->
+        <!--
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+        -->
+    </data>
+</odoo>
